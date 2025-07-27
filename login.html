@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        position: relative;
+      }
+      .login-container {
+        background-color: rgba(255, 255, 255, 0.156);
+        padding: 80px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-right: 100px;
+        border-radius: 8px;
+        box-shadow: 10px 0 10px rgba(0, 0, 0, 0.1);
+        height: 300px;
+      }
+      .login-container h2 {
+        margin-bottom: 20px;
+      }
+      .login-container label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 12px;
+      }
+      .login-container input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .login-container button {
+        width: 35%;
+        padding: 10px;
+        background-color: rgb(241, 29, 89);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 10px;
+        cursor: pointer;
+      }
+      .login-container button:hover {
+        background-color: rgb(207, 122, 146);
+      }
+      .error {
+        color: red;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      .forget-password {
+        position: absolute;
+        bottom: 20px;
+        text-align: center;
+        right: 120px;
+        width: 100%;
+        padding-bottom: 80px;
+        color: rgb(241, 29, 89);
+      }
+    </style>
+  </head>
+  <body>
+    <video
+      src="http://127.0.0.1:5500/allu-arjun-allu.mp4"
+      autoplay
+      muted
+      loop
+      style="width: 100%; height: 100%; position: fixed; z-index: -1"
+    ></video>
+    <a class="forget-password" href="forget-password.html">Forget Password?</a>
+
+    <div class="login-container">
+      <h3>Login</h3>
+      <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+
+        <div id="error-message" class="error"></div>
+
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          var username = document.getElementById("username").value;
+          var password = document.getElementById("password").value;
+          var errorMessage = document.getElementById("error-message");
+
+          if (username === "" || password === "") {
+            errorMessage.textContent = "Both fields are required.";
+            return;
+          }
+
+          if (password.length < 6) {
+            errorMessage.textContent =
+              "Password must be at least 6 characters long.";
+            return;
+          }
+
+          errorMessage.textContent = "";
+
+          console.log("Username:", username);
+          console.log("Password:", password);
+
+          alert("Login successful!");
+
+          // Redirect to the home page or another page
+          window.location.href = "Bucket-Budget.html";
+        });
+    </script>
+  </body>
+</html>

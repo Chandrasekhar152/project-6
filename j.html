@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Telugu Memes</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .search {
+        color: #333;
+        font-size: 18px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 8px 10px;
+        flex: 1;
+      }
+
+      .search::placeholder {
+        color: #888;
+      }
+
+      .img {
+        width: 120px;
+        height: auto;
+        margin-right: 20px;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 10px 0;
+        background-color: #333;
+        text-align: center;
+      }
+
+      ul li {
+        display: inline;
+        margin: 0 10px;
+      }
+
+      ul li a {
+        color: #fff;
+        text-align: center;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        background-color: #444;
+      }
+
+      ul li a:hover {
+        background-color: #555;
+      }
+
+      .memes-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .meme {
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .meme img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="logo.png" class="img" alt="Telugu Memes Logo" />
+      <form action="#">
+        <input
+          class="search"
+          type="text"
+          placeholder="Search for Memes"
+          name="search"
+        />
+      </form>
+    </div>
+    <ul>
+      <li><a href="#latest">Latest</a></li>
+      <li><a href="#trending">Trending</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#submit">Submit Meme</a></li>
+    </ul>
+    <div class="memes-container">
+      <div class="meme">
+        <img src="meme1.jpg" alt="Meme 1" />
+      </div>
+      <div class="meme">
+        <img src="meme2.jpg" alt="Meme 2" />
+      </div>
+      <div class="meme">
+        <img src="meme3.jpg" alt="Meme 3" />
+      </div>
+      <!-- Add more memes here -->
+    </div>
+    <footer>
+      <p>© 2024 Telugu Memes. All rights reserved.</p>
+      <p>Follow us on social media for the latest updates and memes!</p>
+    </footer>
+  </body>
+</html>

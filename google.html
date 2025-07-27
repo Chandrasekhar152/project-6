@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="g.css" />
+
+<style>
+body{
+  background-color: #ede7f6;
+  font-family: Roboto,Sans-serif;
+}
+.form{
+  height: 1100px;
+  width: 600px;
+  margin: auto;
+}
+.required{
+  font-size: 13px;
+  color: red;
+  }
+  .title-div{
+    height: 170px;
+    width: 600px;
+    background-color: #FDFEFE;
+    margin: 15px;
+    border-radius: 8px 8px 8px 8px;
+    border-top: 8px solid #6703c4;
+    padding: 25px;
+  }
+  
+
+  .name-div, .roll-div, .mobile-div, .mobile-div{
+    height: 165px;
+    width: 650px;
+    bottom: 120;
+    background-color: #FDFEFE;
+    margin: 15px;
+    border-radius: 8px 8px 8px 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .mobile-div{
+    padding-top: 2px;
+  }
+  .name{
+    padding-top: 60px;
+    padding-left: 25px;
+    padding-bottom: 25px;
+    font-size: 15px;
+    border-radius: 10px;
+  }
+  .input-div,.radio-div{
+    padding-top: 25px;
+    padding-left: 25px;
+  }
+  .input-div input{
+    width: 300px;
+    border: 0;
+    outline: 0;
+    border-bottom: 1.5px solid #DCD7D7;
+    font-size: 15px;
+
+  }
+
+  .btn{
+    height: 36px;
+    width: 100px;
+    background-color: #6703c4;
+    border-radius: 5px;
+    font-size: 14px;
+    letter-spacing: .5px;
+    font-weight: 540;
+    border: none;
+    padding: 10px;
+    position: absolute;
+    margin: 15px;
+    color: white;
+    cursor: pointer;
+    transition: transform .1s; 
+  }
+  .btn:hover{
+    background-color: #781cce;
+    -ms-transform: scale(0.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.1);
+  }
+  .btn:active{
+    background-color: #ae00ff;
+  }
+  .last-div h2{
+    text-align: center;
+    padding-top: 50px;
+    color: #a2a4a6;
+    font-weight: 900;
+  }
+  .term{
+    font-size: 12px;
+    padding-left: 65px;
+    padding-top: 5px;
+    position: absolute;
+  }
+  .never{
+    padding-left: 15px;
+    font-size: 12px;
+    padding-top: 70px;
+    font-weight: 400;
+  
+  }
+  .input-section {
+    height: 180px;
+    width: 600px;
+    background-color: #fdfefe;
+    margin: 15px;
+    border-radius: 8px;
+  }
+  .radio-div input{
+    width: 30px;
+    border: 0;
+    outline: 0;
+    border-bottom: 1.5px solid #DCD7D7;
+    font-size: 15px;
+
+  }
+ .radio-div{
+  background-color: white;
+  border-radius: 8px;
+  line-height: 1.8;
+ }
+ .name{
+  background-color: #ffffff;
+ }
+.radio_div{
+    height: 165px;
+    width: 650px;
+    bottom: 120;
+    background-color: #FDFEFE;
+    margin: 15px;
+    border-radius: 8px;
+}
+
+</style>
+</head>
+<body>
+  <div class="form">
+     <div class="title-div">
+      <h1>PACE Details for Discord</h1>
+      <p>chandrasekharsadhu79@gmail.com</p>
+      <a href="https://www.linkedin.com/in/sadhu-chandra-sekhar/" target="_blank" >Switch account</a>
+      <hr class="line">
+      <p class="required">* Indicates required quesition</p>
+     </div>
+
+     <div class="name-div">
+      <div class="name">
+        Enter your name<span class="required">*</span>
+      </div>
+      <div class="input-div">
+        <input type="input" name="answer" placeholder="Your answer" />
+      </div>
+     </div>
+      <div class="roll-div">
+        <div class="name">Enter your roll number</div>
+        <div class="input-div">
+          <input type="input" name="answer" placeholder="Your answer" />
+        </div>
+      </div>
+        <div class="mobile-div">
+          <div class="name">Enter your phone number.<span class="required">*</span></div>
+          <div class="input-div">
+            <input type="input" name="answer" placeholder="Your answer" />
+          </div>
+        </div>
+
+
+        <div class="radio_div">
+          <div class="name">Enter your Branch Name.<span class="required">*</span></div>
+          <div class="radio-div">
+            <input class=" e" type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">III BTech - Batch 1 Merit Students</label><br>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">III BTech - Batch 2 (CSE + AIDS)</label><br>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">III BTech - Batch 3 (ECE)</label><br>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">III BTech - Batch 4 (AIML + IT +IOT)</label><br>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">III BTech - Batch 5 (EEE + CSIT + CSE R)</label><br>
+            <input type="radio" id="html" name="fav_language" value="HTML"
+            <label for="html">IV BTech - Batch 1 Merit Students</label><br>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">IV BTech - Batch 2  (CSE + AIDS + AIML)</label><br>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">IV BTech - Batch 3 (ECE + IT + IOT)</label><br>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">IV BTech - Batch 4  (EEE + CSIT)</label><br>
+          </div>
+
+          <div>
+            <a href="images.html">
+            <input class="btn" type="submit" name="Submit" /> </a>
+          </div>
+
+          <div class="last-div">
+          <p class="never">Never submit passwords through Google Forms.</p>
+          <p class="term">
+            This content is neither created nor endorsed by Google, Report Abuse -
+            Term of Service - Private Policy
+          </p>
+          <h2>Google Forms</h2>
+        </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Animation Forms</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container-3d {
+        width: 300px;
+        height: 350px;
+        perspective: 1000px;
+        backdrop-filter: blur(10px); /* Add backdrop-filter for blur effect */
+      }
+      .card-3d {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.6s;
+      }
+      .form-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.2
+        ); /* Adjust opacity as needed */
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Adjust shadow properties as needed */
+      }
+      .form-container h2 {
+        margin-bottom: 20px;
+        color: #ffffff;
+      }
+      .form-container .form-group {
+        margin-bottom: 15px;
+        color: aliceblue;
+      }
+      .form-container .form-control {
+        border-radius: 0;
+      }
+      .form-container .btn {
+        border-radius: 0;
+      }
+      .form-container .text-right {
+        text-align: right;
+      }
+      .form-container a {
+        color: #007bff;
+        text-decoration: none;
+      }
+      .form-container a:hover {
+        text-decoration: underline;
+      }
+      #registrationForm {
+        transform: rotateY(180deg);
+      }
+      .card-flip {
+        transform: rotateY(180deg);
+      }
+      /* Video Styling */
+      video {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Video tag -->
+    <video autoplay muted loop>
+      <source src="" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="container-3d">
+      <div class="card-3d" id="card">
+        <div class="form-container" id="loginForm">
+          <h2>Login</h2>
+          <form>
+            <div class="form-group">
+              <label for="loginUsername">Username</label>
+              <input
+                type="text"
+                class="form-control"
+                id="loginUsername"
+                placeholder="Enter username"
+              />
+            </div>
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="loginPassword"
+                placeholder="Enter password"
+              />
+            </div>
+            <button
+              type="button"
+              class="btn btn-primary btn-block"
+              onclick="loginUser()"
+            >
+              Login
+            </button>
+            <div class="text-right">
+              <a href="#" onclick="showForgotPasswordForm()"
+                >Forgot Password?</a
+              >
+            </div>
+            <div class="text-right">
+              <a href="#" onclick="flipCard()"
+                >Don't have an account? Register</a
+              >
+            </div>
+          </form>
+        </div>
+        <div class="form-container" id="registrationForm">
+          <h2>Register</h2>
+          <form>
+            <div class="form-group">
+              <label for="registerUsername">Username</label>
+              <input
+                type="text"
+                class="form-control"
+                id="registerUsername"
+                placeholder="Enter username"
+              />
+            </div>
+            <div class="form-group">
+              <label for="registerEmail">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="registerEmail"
+                placeholder="Enter email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="registerPassword">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="registerPassword"
+                placeholder="Enter password"
+              />
+            </div>
+            <button
+              type="button"
+              class="btn btn-primary btn-block"
+              onclick="registerUser()"
+            >
+              Register
+            </button>
+            <div class="text-right">
+              <a href="#" onclick="flipCard()"
+                >Already have an account? Login</a
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and jQuery (for Bootstrap functionality) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      function flipCard() {
+        document.getElementById("card").classList.toggle("card-flip");
+      }
+
+      function loginUser() {
+        const username = document.getElementById("loginUsername").value;
+        const password = document.getElementById("loginPassword").value;
+
+        // Perform validation
+        if (username === "") {
+          alert("Please enter a username.");
+          return;
+        }
+        if (password === "") {
+          alert("Please enter a password.");
+          return;
+        }
+        // Additional validation logic can be added here
+
+        // If validation passes, proceed with login
+        alert(`Logged in with Username: ${username}`);
+      }
+
+      function registerUser() {
+        const username = document.getElementById("registerUsername").value;
+        const email = document.getElementById("registerEmail").value;
+        const password = document.getElementById("registerPassword").value;
+        alert(`Registered with Username: ${username}, Email: ${email}`);
+      }
+
+      function showForgotPasswordForm() {
+        alert("Redirecting to Forgot Password page...");
+      }
+    </script>
+  </body>
+</html>

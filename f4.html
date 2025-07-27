@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        padding-left: 122px;
+      }
+
+      .search {
+        color: rgb(5, 5, 5);
+        font-size: 19px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-shadow: 0.1px 0.1px 0px rgb(105, 100, 100);
+        margin-left: 20px;
+        padding-left: 10px;
+      }
+
+      .img {
+        width: 167px;
+        height: auto;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #cdcdcd;
+        padding-left: 120px;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: rgb(2, 2, 2);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover {
+        background-color: #907b7b;
+      }
+      lo {
+        float: right;
+      }
+
+      lo a {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      lo a:hover {
+        background-color: #907b7b;
+      }
+
+      .sign {
+        color: #ffffff;
+        background-color: rgb(237, 41, 103);
+        border: none;
+        display: flex;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-left: 50px;
+      }
+
+      .icon1 {
+        height: 45px;
+        padding-left: 10px;
+        cursor: pointer;
+      }
+
+      .checkin {
+        margin-left: 180px;
+      }
+
+      .srcimage {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .srcimage img {
+        padding-top: 14px;
+        width: 1000px;
+        height: auto;
+      }
+
+      .marquee {
+        display: flex;
+        animation: marquee 50s linear infinite;
+      }
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .Recommended {
+        display: flex;
+        font-size: 27px;
+        font-weight: bold;
+        color: rgb(51, 51, 51);
+      }
+
+      .movies-container {
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .movies {
+        display: flex;
+        flex-wrap: nowrap;
+      }
+
+      .mm {
+        flex: 0 0 auto;
+        width: 210px;
+        margin-right: 10px;
+        text-align: center;
+      }
+
+      .movie {
+        height: 310px;
+        width: 210px;
+      }
+      .mm {
+        flex: 0 0 auto;
+        width: 290px;
+        cursor: pointer;
+        margin-right: 10px;
+        text-align: center;
+        transition: transform 0.5s ease, box-shadow 0.3s ease;
+      }
+
+      .mm:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .movie {
+        height: 370px;
+        width: 250px;
+        border-radius: 11px;
+      }
+      .s4.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+.pre{
+  background-color:  #3d383898;
+  display: flex;
+  padding: 13px;
+  color: white;
+  font-size: large;
+}
+.mmm{
+  background-color:  #3d383898
+
+}
+.mmm {
+        flex: 0 0 auto;
+        width: 290px;
+        cursor: pointer;
+        margin-right: 10px;
+        text-align: center;
+        transition: transform 0.5s ease, box-shadow 0.3s ease;
+      }
+
+      .mmm:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px  #3d383898;
+      }
+      footer{
+        background-attachment: fixed;
+        background-color: #3d383898;
+        text-align: center;
+        
+      }
+      @media screen and (min-width:700px) {
+        .container{
+          width:100%;
+          padding: 5px 10px;
+        }
+      }
+      @media screen and(min-width:700px) {
+        .movie{
+          width:100%;
+          padding: 5px 10px;
+        }
+        
+      }
+      .add-movie-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-movie-button:hover {
+  background-color: #0056b3;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="bookmyshow logo.png" class="img" alt="BookMyShow Logo" />
+      <form action="#">
+        <input
+          class="search"
+          type="text"
+          placeholder="Search for Movie, Event, Play, Sports, and Activities"
+          name="search"
+          size="54"
+        />
+      </form>
+      <div class="checkin">
+        <label for="city">CITY:</label>
+        <select id="city" name="city">
+          <option value="select your city">Select your city</option>
+          <!-- Andhra Pradesh Cities -->
+          <option value="visakhapatnam">Visakhapatnam</option>
+          <option value="vijayawada">Vijayawada</option>
+          <option value="guntur">Guntur</option>
+          <option value="nellore">Nellore</option>
+          <option value="kurnool">Kurnool</option>
+          <option value="kadapa">Kadapa</option>
+          <option value="kakinada">Kakinada</option>
+          <option value="rajahmundry">Rajahmundry</option>
+          <option value="tirupati">Tirupati</option>
+          <option value="anantapur">Anantapur</
+            <option value="vizianagaram">Vizianagaram</option>
+            <option value="eluru">Eluru</option>
+            <option value="machilipatnam">Machilipatnam</option>
+            <option value="chittoor">Chittoor</option>
+            <option value="ongole">Ongole</option>
+            <!-- Telangana Cities -->
+            <option value="hyderabad">Hyderabad</option>
+            <option value="warangal">Warangal</option>
+            <option value="nizamabad">Nizamabad</option>
+            <option value="karimnagar">Karimnagar</option>
+            <option value="khammam">Khammam</option>
+            <option value="ramagundam">Ramagundam</option>
+            <option value="mahabubnagar">Mahabubnagar</option>
+            <option value="nalgonda">Nalgonda</option>
+            <option value="adilabad">Adilabad</option>
+            <option value="suryapet">Suryapet</option>
+            <option value="miryalaguda">Miryalaguda</option>
+            <option value="siddipet">Siddipet</option>
+            <option value="zaheerabad">Zaheerabad</option>
+            <option value="kamareddy">Kamareddy</option>
+            <option value="mancherial">Mancherial</option>
+          </select>
+        </div>
+        <a href="http://127.0.0.1:5500/login.html" target="_blank">
+          <button class="sign">Sign in</button>
+        </a>
+        
+        <img class="icon1" src="====.png" alt="Icon 1" />
+      </a>
+      </div>
+      <div class="step-1">
+        <div class="search1">
+          <div class="nav">
+            <div class="step2">
+              <ul>
+                <li><a href="http://127.0.0.1:5500/google.html" target="_blank">Movies</a></li>
+                <li><a href="https://www.facebook.com/" target="_blank">Stream</a></li>
+                <li><a href="https://chandrasekharsadhu.w3spaces.com/" target="_blank">Events</a></li>
+                <li><a href="https://www.linkedin.com/in/sadhu-chandra-sekhar/" target="_blank">Play</a></li>
+                <li><a href="https://www.linkedin.com/" target="_blank">Sports</a></li>
+                <li><a href="http://127.0.0.1:5500/discount.html" target="_blank">Discounts</a></li>
+  
+                <lo><a href="http://www.google.com/" target="_blank">Gift Cards</a></lo>
+                <lo><a href="http://127.0.0.1:5500/skandha.html" target="_blank">Offers</a></lo>
+                <lo><a href="https://www.linkedin.com/" target="_blank">Corporates</a></lo>
+                <lo><a href="http://127.0.0.1:5500/movielist.html" target="_blank">ListYourShow</a></lo>
+              </ul>
+            </div>
+            <div class="srcimage">
+              <!-- Your srcimages here -->
+              <img src="1.avif" alt="Image 1" />
+              <img src="2.avif" alt="Image 2" />
+              <img src="3.avif" alt="Image 3" />
+              <img src="4.avif" alt="Image 4" />
+              <!-- Duplicate images for continuous effect -->
+              <img src="1.avif" alt="Image 1" />
+              <img src="2.avif" alt="Image 2" />
+              <img src="3.avif" alt="Image 3" />
+              <img src="4.avif" alt="Image 4" />
+              <img src="5.avif" alt="Image 5" />
+          </div>
+      </div>
+            <div class="Recommended">
+              <p class="Movie">Recommended Movies</p>
+            </div>
+            <div class="movies-container">
+              <div class="movies">
+                <div class="mm">
+                  <img class="movie" src="loveme.avif" alt="Love Me Movie" />
+                  <p>Love Me</p>
+                </div>
+                <div class="mm">
+                  <img class="movie" src="Animal.avif" alt="Raju Yadav Movie" />
+                  <p>Animal</p>
+                </div>
+                <div class="mm">
+                  <img
+                    class="movie"
+                    src="Kinddome of Planet.avif"
+                    alt="Kingdom of Planet Movie"
+                  />
+                  <p>Kingdom of Planet</p>
+                </div>
+                <div class="mm">
+                  <img class="movie" src="mayabazar.avif" alt="Srikanth Movie" />
+                  <p>Mayabazar</p>
+                </div>
+                <div class="mm">
+                  <img class="movie" src="kgf.avif" alt="KGF Movie" />
+                  <p>KGF</p>
+                </div>
+                <div class="mm">
+                  <img class="movie" src="srikanth.avif" alt="Srikanth Movie" />
+                  <p>Srikanth</p>
+                </div>
+                <div class="mm">
+                  <img class="movie" src="Mr. & Mrs Mahi.avif" alt="Srikanth Movie" />
+                  <p>Mr. & Mrs Mahi</p>
+                </div>
+                <div class="mm">
+                  <img class="movie" src="aavesham.avif" alt="Srikanth Movie" />
+                  <p>Aavesham</p>
+                </div>
+                <div class="mm">
+                  <img class="movie" src="Magadheera.avif" alt="Srikanth Movie" />
+                  <p>Magadheera</p>
+                </div>
+              </div>
+              
+            </div>
+            <div class="step4"> <img class="s4" src="step4.avif"></div>
+            <div class="Recommended">
+              <p class="Movie">Recommended Movies</p>
+            </div>
+            <div class="movies-container">
+              <div class="movies">
+                <div class="mm">
+                  <img class="movie" src="loveme.avif" alt="Love Me Movie" />
+                  <p>Love Me</p>
+                </div>
+                <div class="mm">
+                  <img class="movie" src="Rajuyadav.avif" alt="Raju Yadav Movie" />
+                  <p>Raju Yadav</p>
+                </div>
+                <div class="mm">
+                  <img
+                    class="movie"
+                    src="Kinddome of Planet.avif"
+                    alt="Kingdom of Planet Movie"
+                  />
+                  <p>Kingdom of Planet</p>
+                </div>
+                <div class="mm">
+                  <img class="movie" src="mayabazar.avif" alt="Srikanth Movie" />
+                  <p>Mayabazar</p>
+                </div>
+                <div class="mm">
+                  <img class="movie" src="kgf.avif" alt="KGF Movie" />
+                  <p>KGF</p>
+                </div>
+                <div class="mm">
+                  <img class="movie" src="srikanth.avif" alt="Srikanth Movie" />
+                  <p>Srikanth</p>
+                </div>
+                <div class="mm">
+                  <img class="movie" src="Mr. & Mrs Mahi.avif" alt="Srikanth Movie" />
+                  <p>Mr. & Mrs Mahi</p>
+                </div>
+                <div class="mm">
+                  <img class="movie" src="aavesham.avif" alt="Srikanth Movie" />
+                  <p>Aavesham</p>
+                </div>
+                <div class="mm">
+                  <img class="movie" src="Magadheera.avif" alt="Srikanth Movie" />
+                  <p>Magadheera</p>
+                </div>
+              </div>
+              
+          </div>
+          <div class="Recommended">
+            <p class="Movie">Explore Fun Activites</p>
+          </div>
+                  
+          <div class="movies-container">
+            <div class="movies">
+              <div class="mm">
+                <img class="movie" src="wonderla.avif" alt="Love Me Movie" />
+                <p>Wonderla</p>
+              </div>
+              <div class="mm">
+                <img class="movie" src="Raamoji Film.avif" alt="Raju Yadav Movie" />
+                <p>Raamouji Film City</p>
+              </div>
+              <div class="mm">
+                <img class="movie" src="salar.avif" alt="salar" />
+                <p>salar</p>
+              </div>
+              <div class="mm">
+                <img class="movie" src="snow.avif" alt="Srikanth Movie" />
+                <p>Snow</p>
+              </div>
+              <div class="mm">
+                <img class="movie" src="studiotoor.avif" alt="KGF Movie" />
+                <p>Studio Tour</p>
+              </div>
+              <div class="mm">
+                <img class="movie" src="srikanth.avif" alt="Srikanth Movie" />
+                <p>Srikanth</p>
+              </div>
+              <div class="mm">
+                <img class="movie" src="day outing.avif" alt="Srikanth Movie" />
+                <p>Day Outing</p>
+              </div>
+              <div class="mm">
+                <img class="movie" src="aavesham.avif" alt="Srikanth Movie" />
+                <p>Aavesham</p>
+              </div>
+              <div class="mm">
+                <img class="movie" src="Magadheera.avif" alt="Srikanth Movie" />
+                <p>Magadheera</p>
+              </div>
+            </div>
+            <button class="add-movie-button">Add Movie</button>
+          </div>
+
+          
+        </div>
+        <div class="pre">
+          <p class="Movie">Explore Fun Activites</p>
+        </div>
+        <div class="movies-container">
+          <div class="movies">
+            <div class="mmm">
+              <img class="movie" src="wonderla.avif" alt="Love Me Movie" />
+              <p>Wonderla</p>
+            </div>
+            <div class="mmm">
+              <img class="movie" src="Raamoji Film.avif" alt="Raju Yadav Movie" />
+              <p>Raamouji Film City</p>
+            </div>
+            <div class="mmm">
+              <img
+                class="movie"
+                src="salar.avif"
+                alt="salar"
+              />
+              <p>salar</p>
+            </div>
+            <div class="mmm">
+              <img class="movie" src="snow.avif" alt="Srikanth Movie" />
+              <p>Snow</p>
+            </div>
+            <div class="mmm">
+              <img class="movie" src="studiotoor.avif" alt="KGF Movie" />
+              <p>Studio Tour</p>
+            </div>
+            <div class="mmm">
+              <img class="movie" src="srikanth.avif" alt="Srikanth Movie" />
+              <p>Srikanth</p>
+            </div>
+            <div class="mmm">
+              <img class="movie" src="day outing.avif" alt="Srikanth Movie" />
+              <p>Day Outing</p>
+            </div>
+            <div class="mmm">
+              <img class="movie" src="aavesham.avif" alt="Srikanth Movie" />
+              <p>Aavesham</p>
+            </div>
+            <div class="mmm">
+              <img class="movie" src="Magadheera.avif" alt="Srikanth Movie" />
+              <p>Magadheera</p>
+            </div>
+            
+          </div>
+
+        </div>
+        <div class="Recommended">
+          <p class="Movie">Your Music Studio</p>
+        </div>
+        <div class="movies-container">
+          <div class="movies">
+            <div class="mm">
+              <img class="movie" src="11.avif" alt="Love Me Movie" />
+              <p>Samatha Illaiyaragam</p>
+            </div>
+            <div class="mm">
+              <img class="movie" src="12.avif" alt="Raju Yadav Movie" />
+              <p>Alan Walker Indian Tour</p>
+            </div>
+            <div class="mm">
+              <img
+                class="movie"
+                src="13.avif"
+                alt="salar"
+              />
+              <p>Euphoria Band Live at Xora</p>
+            </div>
+            <div class="mm">
+              <img class="movie" src="14.avif" alt="Srikanth Movie" />
+              <p>Commersial Night Ft. Dj..</p>
+            </div>
+            <div class="mm">
+              <img class="movie" src="15.avif" alt="KGF Movie" />
+              <p>Carnatic Music Live....</p>
+            </div>
+            <div class="mm">
+              <img class="movie" src="16.avif" alt="Srikanth Movie" />
+              <p>Srikanth</p>
+            </div>
+            <div class="mm">
+              <img class="movie" src="17.avif" alt="Srikanth Movie" />
+              <p>Day Outing</p>
+            </div>
+            <div class="mm">
+              <img class="movie" src="aavesham.avif" alt="Srikanth Movie" />
+              <p>Aavesham</p>
+            </div>
+            <div class="mm">
+              <img class="movie" src="18.avif" alt="Srikanth Movie" />
+              <p>Magadheera</p>
+            </div>
+          </div>
+          </div>
+          
+          
+      </div>
+      <footer>
+        <p>sadhu</p>
+        <p>sadhu</p>
+        <p>Additional information or sentences can be added here.</p>
+        <p>This could include contact information, copyright details, or any other relevant content.</p>
+        <p>Feel free to reach out to us at example@example.com for any inquiries.</p>
+        <p>Follow us on social media for the latest updates and promotions!</p>
+        <p>Join our mailing list to receive exclusive offers and discounts.</p>
+
+
+      </footer>
+      <script>
+        // JavaScript functions for image navigation
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.srcimage img');
+        const totalImages = images.length;
+
+        function nextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % totalImages;
+            images[currentIndex].classList.add('active');
+        }
+
+        function prevImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+            images[currentIndex].classList.add('active');
+        }
+    </script>
+    </body>
+  </html>

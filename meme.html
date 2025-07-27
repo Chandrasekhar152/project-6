@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bahubali</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #1c1c1c;
+        color: #ffffff;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        background-color: #333333;
+        padding: 10px 0;
+      }
+      .search {
+        font-size: 19px;
+        border-radius: 5px;
+        padding: 5px;
+        margin-left: 20px;
+      }
+      .img {
+        width: 167px;
+        height: auto;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #444444;
+        padding-left: 20px;
+      }
+      li {
+        float: left;
+      }
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      li a:hover {
+        background-color: #555555;
+      }
+      .sign {
+        background-color: #ed2967;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-left: 50px;
+        color: #ffffff;
+      }
+      .icon1 {
+        height: 45px;
+        padding-left: 10px;
+        cursor: pointer;
+      }
+      .checkin {
+        margin-left: 20px;
+      }
+      .srcimage {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+      }
+      .srcimage img {
+        padding-top: 14px;
+        width: 1000px;
+        height: auto;
+      }
+      .marquee {
+        display: flex;
+        animation: marquee 50s linear infinite;
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .Recommended {
+        display: flex;
+        font-size: 27px;
+        font-weight: bold;
+        color: gold;
+        margin: 20px 0;
+      }
+      .movies-container {
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      .movies {
+        display: flex;
+        flex-wrap: nowrap;
+      }
+      .mm {
+        flex: 0 0 auto;
+        width: 210px;
+        margin-right: 10px;
+        text-align: center;
+      }
+      .movie {
+        height: 310px;
+        width: 210px;
+        border-radius: 11px;
+      }
+      .mm {
+        flex: 0 0 auto;
+        width: 290px;
+        cursor: pointer;
+        margin-right: 10px;
+        text-align: center;
+        transition: transform 0.5s ease, box-shadow 0.3s ease;
+      }
+      .mm:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      footer {
+        background-color: #333333;
+        text-align: center;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="bahubali_logo.png" class="img" alt="Bahubali Logo" />
+      <form action="#">
+        <input
+          class="search"
+          type="text"
+          placeholder="Search for Bahubali content"
+          name="search"
+          size="54"
+        />
+      </form>
+      <div class="checkin">
+        <label for="city">CITY:</label>
+        <select id="city" name="city">
+          <option value="select your city">Select your city</option>
+          <!-- Add relevant cities here -->
+          <option value="mahabalipuram">Mahabalipuram</option>
+          <option value="maharanigunj">Maharanigunj</option>
+          <option value="mahishmati">Mahishmati</option>
+        </select>
+      </div>
+      <a href="http://127.0.0.1:5500/login.html" target="_blank">
+        <button class="sign">Sign in</button>
+      </a>
+      <img class="icon1" src="bahubali_icon.png" alt="Icon 1" />
+    </div>
+    <div class="step-1">
+      <div class="nav">
+        <div class="step2">
+          <ul>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Stream</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Play</a></li>
+            <li><a href="#">Sports</a></li>
+            <li><a href="#">Discounts</a></li>
+            <li><a href="#">Gift Cards</a></li>
+            <li><a href="#">Offers</a></li>
+            <li><a href="#">Corporates</a></li>
+            <li><a href="#">ListYourShow</a></li>
+          </ul>
+        </div>
+        <div class="srcimage">
+          <div class="marquee">
+            <img src="bahubali1.jpg" alt="Image 1" />
+            <img src="bahubali2.jpg" alt="Image 2" />
+            <img src="bahubali3.jpg" alt="Image 3" />
+            <img src="bahubali4.jpg" alt="Image 4" />
+            <!-- Duplicate images for continuous effect -->
+            <img src="bahubali1.jpg" alt="Image 1" />
+            <img src="bahubali2.jpg" alt="Image 2" />
+            <img src="bahubali3.jpg" alt="Image 3" />
+            <img src="bahubali4.jpg" alt="Image 4" />
+          </div>
+        </div>
+        <div class="Recommended">
+          <p class="Movie">Recommended Movies</p>
+        </div>
+        <div class="movies-container">
+          <div class="movies">
+            <div class="mm">
+              <img
+                class="movie"
+                src="bahubali_movie1.jpg"
+                alt="Bahubali Movie"
+              />
+              <p>Bahubali: The Beginning</p>
+            </div>
+            <div class="mm">
+              <img
+                class="movie"
+                src="bahubali_movie2.jpg"
+                alt="Bahubali Movie"
+              />
+              <p>Bahubali: The Conclusion</p>
+            </div>
+            <div class="mm">
+              <img
+                class="movie"
+                src="bahubali_movie3.jpg"
+                alt="Bahubali Movie"
+              />
+              <p>Rise of Mahishmati</p>
+            </div>
+            <div class="mm">
+              <img
+                class="movie"
+                src="bahubali_movie4.jpg"
+                alt="Bahubali Movie"
+              />
+              <p>Mahendra Bahubali</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Bahubali Official Website</p>
+      <p>Contact us at bahubali@mahishmati.com</p>
+      <p>Follow us on social media for the latest updates and promotions!</p>
+      <p>Join our mailing list to receive exclusive offers and discounts.</p>
+    </footer>
+  </body>
+</html>

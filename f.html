@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Your existing CSS styles */
+
+      /* Additional CSS for the navigation buttons */
+      .button-container {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .button-container button {
+        background-color: #f0f0f0;
+        border: none;
+        color: black;
+        padding: 10px 15px;
+        font-size: 18px;
+        cursor: pointer;
+      }
+
+      .button-container button:hover {
+        background-color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="bookmyshow logo.png" class="img" alt="BookMyShow Logo" />
+      <form action="#">
+        <input
+          class="search"
+          type="text"
+          placeholder="Search for Movie, Event, Play, Sports, and Activities"
+          name="search"
+          size="54"
+        />
+      </form>
+      <div class="checkin">
+        <label for="city">CITY:</label>
+        <select id="city" name="city">
+          <!-- Options for cities -->
+        </select>
+      </div>
+      <a href="http://127.0.0.1:5500/login.html" target="_blank">
+        <button class="sign">Sign in</button>
+      </a>
+      <img class="icon1" src="====.png" alt="Icon 1" />
+    </div>
+
+    <div class="step-1">
+      <!-- Your existing content -->
+    </div>
+
+    <div class="search1">
+      <div class="nav">
+        <div class="step2">
+          <ul>
+            <li>
+              <a href="http://127.0.0.1:5500/google.html" target="_blank"
+                >Movies</a
+              >
+            </li>
+            <li>
+              <a href="https://www.facebook.com/" target="_blank">Stream</a>
+            </li>
+            <li>
+              <a href="https://chandrasekharsadhu.w3spaces.com/" target="_blank"
+                >Events</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/sadhu-chandra-sekhar/"
+                target="_blank"
+                >Play</a
+              >
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/" target="_blank">Sports</a>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:5500/discount.html" target="_blank"
+                >Discounts</a
+              >
+            </li>
+            <li>
+              <a href="http://www.google.com/" target="_blank">Gift Cards</a>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:5500/skandha.html" target="_blank"
+                >Offers</a
+              >
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/" target="_blank">Corporates</a>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:5500/movielist.html" target="_blank"
+                >ListYourShow</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="srcimage">
+          <!-- Your existing image carousel content -->
+          <img src="1.avif" alt="Image 1" class="active" />
+          <img src="2.avif" alt="Image 2" />
+          <img src="3.avif" alt="Image 3" />
+          <img src="4.avif" alt="Image 4" />
+          <!-- Duplicate images for continuous effect -->
+          <img src="1.avif" alt="Image 1" />
+          <img src="2.avif" alt="Image 2" />
+          <img src="3.avif" alt="Image 3" />
+          <img src="4.avif" alt="Image 4" />
+          <img src="5.avif" alt="Image 5" />
+        </div>
+        <!-- Add navigation buttons here -->
+        <div class="button-container">
+          <button onclick="prevImage()">&#10094;</button>
+          <button onclick="nextImage()">&#10095;</button>
+        </div>
+      </div>
+      <div class="Recommended">
+        <p class="Movie">Recommended Movies</p>
+      </div>
+      <div class="movies-container">
+        <!-- Your existing movie container -->
+      </div>
+      <!-- Repeat the movie container for other sections -->
+    </div>
+
+    <footer>
+      <p>sadhu</p>
+      <p>sadhu</p>
+      <p>Additional information or sentences can be added here.</p>
+      <p>
+        This could include contact information, copyright details, or any other
+        relevant content.
+      </p>
+      <p>
+        Feel free to reach out to us at example@example.com for any inquiries.
+      </p>
+      <p>Follow us on social media for the latest updates and promotions!</p>
+      <p>Join our mailing list to receive exclusive offers and discounts.</p>
+    </footer>
+
+    <script>
+      // JavaScript functions for image navigation
+      let currentIndex = 0;
+      const images = document.querySelectorAll(".srcimage img");
+      const totalImages = images.length;
+
+      function nextImage() {
+        images[currentIndex].classList.remove("active");
+        currentIndex = (currentIndex + 1) % totalImages;
+        images[currentIndex].classList.add("active");
+      }
+
+      function prevImage() {
+        images[currentIndex].classList.remove("active");
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        images[currentIndex].classList.add("active");
+      }
+    </script>
+  </body>
+</html>
