@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --background-color: white;
+        --text-color: black;
+        --nav-bg-color: #f8f9fa;
+        --nav-text-color: black;
+        --footer-bg-color: #3d383898;
+        --footer-text-color: white;
+      }
+
+      [data-theme="dark"] {
+        --background-color: #121212;
+        --text-color: white;
+        --nav-bg-color: #333;
+        --nav-text-color: white;
+        --footer-bg-color: #333;
+        --footer-text-color: white;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-image: url("your-background-image.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        background: linear-gradient(135deg, #bbbcbe0b, #e3d3d3);
+      }
+
+      .navbar {
+        background-color: var(--nav-bg-color);
+      }
+
+      .navbar-nav .nav-link {
+        color: var(--nav-text-color) !important;
+      }
+
+      .navbar-nav .nav-item {
+        margin-right: 15px; /* Add space between navbar items */
+      }
+
+      .container-custom {
+        display: flex;
+        align-items: center;
+        padding-left: 122px;
+      }
+
+      .search-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-left: 20px;
+      }
+
+      .search {
+        color: rgb(5, 5, 5);
+        font-size: 19px;
+        border-radius: 5px;
+        text-shadow: 0.1px 0.1px 0px rgb(105, 100, 100);
+        padding-left: 10px;
+      }
+
+      .microphone {
+        position: absolute;
+        right: 10px;
+        cursor: pointer;
+        color: gray;
+      }
+
+      .img {
+        width: 167px;
+        height: auto;
+      }
+
+      .checkin {
+        display: flex;
+        align-items: center;
+        margin-left: 180px;
+      }
+
+      .checkin label {
+        margin-right: 10px;
+      }
+
+      .srcimage {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        height: 300px;
+      }
+
+      .srcimage img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .marquee {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        height: 100%;
+      }
+
+      .button-container {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+      }
+
+      .button-container button {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 18px;
+      }
+
+      .button-container button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .movies {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .mm {
+        flex: 0 0 auto;
+        width: 210px;
+        margin-right: 10px;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.5s ease, box-shadow 0.3s ease;
+      }
+
+      .mm:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .movie {
+        height: 310px;
+        width: 210px;
+        border-radius: 11px;
+      }
+
+      footer {
+        background-color: var(--footer-bg-color);
+        text-align: center;
+        padding: 10px 0;
+        color: var(--footer-text-color);
+      }
+
+      .audio-control {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        color: white;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .audio-control:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .toggle-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+
+      .toggle-button {
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        color: white;
+        padding: 10px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .toggle-button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      /* Sidebar Styles */
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+
+      .sidebar a {
+        padding: 10px 15px;
+        text-decoration: none;
+        font-size: 25px;
+        color: white;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidebar a:hover {
+        color: #f1f1f1;
+      }
+
+      .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: #111;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+      }
+
+      .openbtn:hover {
+        background-color: #444;
+      }
+
+      /* Responsive Styles */
+      @media screen and (max-width: 768px) {
+        .container-custom {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .checkin {
+          margin-left: 0;
+        }
+
+        .navbar {
+          display: none;
+        }
+
+        .openbtn {
+          display: block;
+        }
+      }
+
+      @media screen and (min-width: 769px) {
+        .sidebar {
+          display: none;
+        }
+
+        .openbtn {
+          display: none;
+        }
+
+        .navbar {
+          display: flex !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <audio id="background-audio" src="audio.mp3" autoplay loop></audio>
+    <div class="container container-custom">
+      <img src="ats.jpeg" class="img" alt="BookMyShow Logo" />
+      <div class="search-container">
+        <input
+          class="form-control search"
+          type="text"
+          id="search-input"
+          placeholder="Search"
+          name="search"
+        />
+        <span class="microphone" id="microphone">&#127908;</span>
+      </div>
+      <div class="checkin">
+        <label for="city">CITY:</label>
+        <select id="city" name="city" class="form-control">
+          <option value="select your city">Select your city</option>
+          <!-- Add your city options here -->
+        </select>
+      </div>
+      <a href="entry.html" target="_blank">
+        <button class="btn btn-danger ml-3">Sign in</button>
+      </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="f3.html"
+            target="_blank"
+            >BookMyShow</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="http://127.0.0.1:5500/google.html"
+            target="_blank"
+            >Technician Team</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="maahismathi.html" target="_blank"
+            >Maahismathi</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="https://chandrasekharsadhu.w3spaces.com/"
+            target="_blank"
+            >Events</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="scenes.html" target="_blank">Scenes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="makings.html" target="_blank">Makings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mu.html" target="_blank">Musics</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="animation.html" target="_blank">Animations</a>
+        </li>
+          
+      </ul>
+    </nav>
+
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="http://127.0.0.1:5500/google.html" target="_blank"
+        >Technician Team</a
+      >
+      <a href="maahismathi.html" target="_blank">Maahismathi</a>
+      <a href="https://chandrasekharsadhu.w3spaces.com/" target="_blank"
+        >Events</a
+      >
+      <a href="scenes.html" target="_blank">Scenes</a>
+      <a href="makings.html" target="_blank">Makings</a>
+      <a href="animation.html" target="_blank">Animations</a>
+    </div>
+    <a href="makings.html" target="_blank">Songs</a>
+    </div>
+
+    <button class="openbtn" onclick="openNav()">☰</button>
+
+    <div class="srcimage">
+      <div class="marquee" id="marquee">
+        <img src="1.jfif" alt="Image 1" />
+        <img src="2.jfif" alt="Image 2" />
+        <img src="3.jfif" alt="Image 3" />
+        <img src="4.jfif" alt="Image 4" />
+        <img src="1.jfif" alt="Image 1" />
+        <img src="2.jfif" alt="Image 2" />
+        <img src="3.jfif" alt="Image 3" />
+        <img src="4.jfif" alt="Image 4" />
+      </div>
+      <div class="button-container">
+        <button onclick="prevImage()">&#10094;</button>
+        <button onclick="nextImage()">&#10095;</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>Characters</h1>
+      <div class="movies">
+        <div class="mm">
+          <img
+            class="movie img-fluid"
+            src="amandra.webp"
+            alt="Amarendra Bahubali"
+          />
+          <p>Amarendra Bahubali</p>
+        </div>
+        <div class="mm">
+          <img
+            class="movie img-fluid"
+            src="Mahendra Bahubali.jfif"
+            alt="Amarendra Ba"
+          />
+          <p>Mahendra Bahubali</p>
+        </div>
+        <div class="mm">
+          <a href="ramya.html">
+            <img class="movie img-fluid" src="Ramya.jpg" alt="Kattappa" />
+            <p>Shivaghami</p>
+          </a>
+        </div>
+        <div class="mm">
+          <a href="ramya.html">
+            <img class="movie img-fluid" src="bhalladeva.jpg" alt="Kattappa" />
+            <p>Bhalladeva</p>
+          </a>
+        </div>
+        <div class="mm">
+          <a href="kattapa.html">
+            <img class="movie img-fluid" src="Kattappa.jfif" alt="Kattappa" />
+            <p>Kattappa</p>
+          </a>
+        </div>
+        <div class="mm">
+          <a href="devasena.html">
+            <img class="movie img-fluid" src="Devasena.jfif" alt="Devasena" />
+            <p>Devasena</p>
+          </a>
+        </div>
+        <div class="mm">
+          <a href="bijjaladeva.html">
+            <img class="movie img-fluid" src="bichlla.jfif" alt="Bijjaladeva" />
+            <p>Bijjaladeva</p>
+          </a>
+        </div>
+        <div class="mm">
+          <img class="movie img-fluid" src="kumarvarma.jfif" alt="Kumarvarma" />
+          <p>Kumarvarma</p>
+        </div>
+        <div class="mm">
+          <img class="movie img-fluid" src="kalakeya.jfif" alt="Kalakeya" />
+          <p>Kalakeya</p>
+        </div>
+        <div class="mm">
+          <img class="movie img-fluid" src="avanthika.jfif" alt="Avantika" />
+          <p>Avantika</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2023 BookMyShow. All Rights Reserved.</p>
+    </footer>
+
+    <button class="audio-control" onclick="toggleAudio()">
+      <span id="audio-icon">&#128266;</span>
+    </button>
+
+    <div class="toggle-container">
+      <button class="toggle-button" id="theme-toggle">Toggle Theme</button>
+    </div>
+
+    <script>
+      let marquee = document.getElementById("marquee");
+      let images = document.querySelectorAll(".marquee img");
+      let currentIndex = 0;
+      let totalImages = images.length / 2; // since images are duplicated for continuous effect
+
+      function showImage(index) {
+        marquee.style.transform = `translateX(-${index * 450}px)`;
+      }
+
+      function nextImage() {
+        currentIndex = (currentIndex + 1) % totalImages;
+        showImage(currentIndex);
+      }
+
+      function prevImage() {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        showImage(currentIndex);
+      }
+
+      setInterval(nextImage, 2000); // Automatically change image every 2 seconds
+
+      // Audio control
+      const audio = document.getElementById("background-audio");
+      const audioIcon = document.getElementById("audio-icon");
+
+      function toggleAudio() {
+        if (audio.paused) {
+          audio.play();
+          audioIcon.innerHTML = "&#128266;"; // Volume icon
+        } else {
+          audio.pause();
+          audioIcon.innerHTML = "&#128263;"; // Mute icon
+        }
+      }
+
+      // Voice search
+      const searchInput = document.getElementById("search-input");
+      const microphone = document.getElementById("microphone");
+      const recognition = new (window.SpeechRecognition ||
+        window.webkitSpeechRecognition)();
+
+      microphone.addEventListener("click", () => {
+        recognition.start();
+      });
+
+      recognition.addEventListener("result", (event) => {
+        const transcript = event.results[0][0].transcript;
+        searchInput.value = transcript;
+      });
+
+      recognition.addEventListener("speechend", () => {
+        recognition.stop();
+      });
+
+      recognition.addEventListener("error", (event) => {
+        console.error("Speech recognition error", event.error);
+      });
+
+      // Theme toggle
+      const themeToggle = document.getElementById("theme-toggle");
+      const body = document.body;
+
+      function setTheme(theme) {
+        body.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+      }
+
+      function toggleTheme() {
+        const currentTheme = body.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        setTheme(newTheme);
+      }
+
+      // Set initial theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      setTheme(savedTheme);
+
+      themeToggle.addEventListener("click", toggleTheme);
+
+      // Sidebar control
+      function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+      }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

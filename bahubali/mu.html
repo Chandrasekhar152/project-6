@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bahubali Song Portal</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #282c34;
+        color: #fff;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: auto;
+        padding-top: 50px;
+        position: relative;
+        z-index: 2;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .song-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        transition: opacity 0.3s;
+      }
+
+      .song-list li {
+        cursor: pointer;
+        padding: 15px;
+        background-color: #3d4451;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+
+      .song-list li:hover {
+        background-color: #4a5362;
+        transform: scale(1.05);
+      }
+
+      #backgroundVideo,
+      #backgroundIframe {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: #000;
+        object-fit: cover;
+      }
+
+      #backgroundIframe {
+        border: none;
+      }
+
+      .mute-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(61, 68, 81, 0.7);
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        padding: 10px 20px;
+        cursor: pointer;
+        z-index: 3;
+        transition: background-color 0.3s;
+      }
+
+      .mute-toggle:hover {
+        background-color: rgba(74, 83, 98, 0.7);
+      }
+
+      .song-list.playing {
+        opacity: 0.4; /* Reduced opacity when song is playing */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Bahubali Song Portal</h1>
+      <ul class="song-list">
+        <li
+          class="song"
+          data-video-type="youtube"
+          data-video-id="Sivuni Aana.mp4"
+        >
+          Sivuni Aana
+        </li>
+        <li class="song" data-video-type="local" data-video-src="pachha.mp4">
+          Pacha Bottesi
+        </li>
+        <li class="song" data-video-type="local" data-video-src="Dhivara.mp4">
+          Dhivara
+        </li>
+        <li class="song" data-video-type="local" data-video-src="mano.mp4">
+          Manohari
+        </li>
+        <li class="song" data-video-type="local" data-video-src="pachha.mp4">
+          Kaun Hain Voh
+        </li>
+        <li class="song" data-video-type="local" data-video-src="okapranam.mp4">
+          Oka Pranam
+        </li>
+        <li class="song" data-video-type="local" data-video-src="mano.mp4">
+          Manohari
+        </li>
+        <li class="song" data-video-type="local" data-video-src="pachha.mp4">
+          Kaun Hain Voh
+        </li>
+        <!-- Add more songs as needed -->
+      </ul>
+    </div>
+
+    <video id="backgroundVideo" loop muted autoplay style="display: none">
+      <source id="videoSource" src="" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <iframe
+      id="backgroundIframe"
+      style="display: none"
+      frameborder="0"
+      allow="autoplay"
+      allowfullscreen
+    ></iframe>
+
+    <button class="mute-toggle">Unmute</button>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".song").click(function () {
+          var videoType = $(this).data("video-type");
+          var videoElement = $("#backgroundVideo")[0];
+
+          if (videoType === "youtube") {
+            var videoId = $(this).data("video-id");
+            var videoUrl =
+              "https://www.youtube.com/embed/" + videoId + "?autoplay=1&mute=1";
+            $("#backgroundVideo").hide();
+            $("#backgroundIframe").attr("src", videoUrl).show();
+          } else if (videoType === "local") {
+            var videoSrc = $(this).data("video-src");
+            $("#backgroundIframe").hide();
+            $("#videoSource").attr("src", videoSrc);
+            videoElement.load();
+            $("#backgroundVideo").show();
+          }
+
+          // Add playing class to the song list to reduce opacity
+          $(".song-list").addClass("playing");
+        });
+
+        $(".mute-toggle").click(function () {
+          var videoElement = $("#backgroundVideo")[0];
+          if (videoElement.muted) {
+            videoElement.muted = false;
+            $(this).text("Mute");
+          } else {
+            videoElement.muted = true;
+            $(this).text("Unmute");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

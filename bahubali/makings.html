@@ -1,0 +1,562 @@
+\<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Making of Baahubali</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+      }
+
+      header {
+        background: url("img/header-bg.jpg") no-repeat center center;
+        background-size: cover;
+        color: rgb(145, 0, 0);
+        text-align: center;
+        padding: 5rem 0;
+      }
+
+      header .container {
+        max-width: 700px;
+      }
+
+      #making,
+      #videos,
+      #cast,
+      #gallery,
+      #contact {
+        margin-top: 2rem;
+      }
+
+      #making p {
+        text-align: center;
+      }
+
+      #cast .col-md-4 {
+        margin-bottom: 2rem;
+      }
+
+      .img-fluid {
+        max-width: 100%;
+        height: auto;
+      }
+
+      footer {
+        background-color: rgb(145, 0, 0);
+        color: white;
+        padding: 1rem 0;
+      }
+
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        background: #000;
+        margin-bottom: 1rem;
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .video-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+
+      .video-links a {
+        margin: 0 0.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      .video-links a:hover {
+        transform: scale(1.1);
+      }
+
+      #chat-container {
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: none;
+        flex-direction: column;
+        background-color: #ffe6e9;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+
+      #chat-header {
+        background-color: #e91e63;
+        color: white;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      #chat-body {
+        flex: 1;
+        padding: 10px;
+        overflow-y: auto;
+        background-color: #fff;
+      }
+
+      #chat-messages {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      #chat-footer {
+        display: flex;
+        padding: 10px;
+        background-color: #f1f1f1;
+      }
+
+      #user-input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+
+      button {
+        padding: 10px;
+        background-color: #e91e63;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #d81b60;
+      }
+
+      .message {
+        padding: 10px;
+        border-radius: 5px;
+        margin: 5px 0;
+      }
+
+      .user-message {
+        background-color: #e91e63;
+        color: white;
+        align-self: flex-end;
+      }
+
+      .bot-message {
+        background-color: #f1f1f1;
+        color: black;
+        align-self: flex-start;
+      }
+
+      #chat-icon {
+        width: 50px;
+        height: 50px;
+        background-color: #bb003e;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 999;
+        font-size: 24px;
+      }
+
+      #close-chat {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Baahubali</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#making">Making</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#videos">Making Videos</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#cast">Cast</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gallery">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <header>
+      <div class="container">
+        <h1>Making of Baahubali</h1>
+        <p class="lead">
+          Discover the epic journey behind India's biggest blockbuster
+        </p>
+      </div>
+    </header>
+
+    <section id="making" class="py-5">
+      <div class="container">
+        <h2 class="text-center">Behind the Scenes</h2>
+        <p>
+          The making of "Baahubali" was an epic journey that involved a massive
+          team of dedicated professionals. Directed by S.S. Rajamouli, the film
+          was a blend of cutting-edge technology and meticulous craftsmanship.
+        </p>
+        <p>
+          The movie featured groundbreaking visual effects, extensive set
+          designs, and intricate costume creation, making it one of the most
+          ambitious projects in Indian cinema history.
+        </p>
+      </div>
+    </section>
+
+    <section id="videos" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center">Making Videos</h2>
+        <div
+          id="videoCarousel"
+          class="carousel slide"
+          data-ride="carousel"
+          data-touch="false"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="video-container">
+                <iframe
+                  class="video-iframe"
+                  src="https://www.youtube.com/embed/Y_yc0mM818k?si=DqfrQ19ird1v7H-n"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="video-container">
+                <iframe
+                  class="video-iframe"
+                  src="https://www.youtube.com/embed/AcB2BqM9MQk"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="video-container">
+                <iframe
+                  class="video-iframe"
+                  src="https://www.youtube.com/embed/QNEfYw3TytY"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="video-container">
+                <iframe
+                  class="video-iframe"
+                  src="https://www.youtube.com/embed/RRzUJSLev1E"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="video-container">
+                <iframe
+                  class="video-iframe"
+                  src="https://www.youtube.com/embed/JRRJdWzeiKU"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="video-container">
+                <iframe
+                  class="video-iframe"
+                  src="https://www.youtube.com/embed/MmUDd5fCWvo"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#videoCarousel"
+            role="button"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#videoCarousel"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+        <div class="video-links">
+          <a href="https://youtu.be/R3ynBKQnM5E?feature=shared" target="_blank">
+            <img
+              src="https://img.youtube.com/vi/R3ynBKQnM5E/0.jpg"
+              alt="Video 1"
+              class="img-fluid"
+              style="width: 400px; height: auto"
+            />
+          </a>
+          <a href="https://youtu.be/v2QXjUzXiGE?feature=shared" target="_blank">
+            <img
+              src="https://img.youtube.com/vi/v2QXjUzXiGE/0.jpg"
+              alt="Video 2"
+              class="img-fluid"
+              style="width: 400px; height: auto"
+            />
+          </a>
+          <a href="https://youtu.be/hv3RpsjOQ0c?feature=shared" target="_blank">
+            <img
+              src="https://img.youtube.com/vi/hv3RpsjOQ0c/0.jpg"
+              alt="Video 3"
+              class="img-fluid"
+              style="width: 400px; height: auto"
+            />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="cast" class="py-5">
+      <div class="container">
+        <h2 class="text-center">Cast</h2>
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <img
+              src="pra.jfif"
+              alt="Prabhas"
+              class="img-fluid rounded-circle"
+            />
+            <h4>Prabhas</h4>
+            <p>As Amarendra Baahubali / Mahendra Baahubali</p>
+          </div>
+          <div class="col-md-4 text-center">
+            <img
+              src="raana.jfif"
+              alt="Rana Daggubati"
+              class="img-fluid rounded-circle"
+            />
+            <h4>Rana Daggubati</h4>
+            <p>As Bhallaladeva</p>
+          </div>
+          <div class="col-md-4 text-center">
+            <img
+              src="anu.jfif"
+              alt="Anushka Shetty"
+              class="img-fluid rounded-circle"
+            />
+            <h4>Anushka Shetty</h4>
+            <p>As Devasena</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="py-5">
+      <div class="container">
+        <h2 class="text-center">Gallery</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <img src="bd.jpg" alt="Scene 1" class="img-fluid" />
+          </div>
+          <div class="col-md-4">
+            <img src="b5.jpg" alt="Scene 2" class="img-fluid" />
+          </div>
+          <div class="col-md-4">
+            <img src="ava.jpg" alt="Scene 3" class="img-fluid" /><a
+              href="gallary.html"
+              >more</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center">Contact</h2>
+        <form>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Your Name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Your Email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              class="form-control"
+              id="message"
+              rows="4"
+              placeholder="Your Message"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="text-center">
+      <div class="container">
+        <p>&copy; 2024 Making of Baahubali. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <div id="chat-icon" onclick="toggleChat()">💬</div>
+
+    <div id="chat-container">
+      <div id="chat-header">
+        I am Sadhu , Bujji friend
+        <button id="close-chat" onclick="toggleChat()">✖</button>
+      </div>
+      <div id="chat-body">
+        <ul id="chat-messages"></ul>
+      </div>
+      <div id="chat-footer">
+        <input type="text" id="user-input" placeholder="Type a message..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#videoCarousel").carousel({
+          touch: false,
+        });
+
+        // Pause carousel when video is playing
+        $(".video-iframe").each(function () {
+          var player = new YT.Player(this, {
+            events: {
+              onStateChange: function (event) {
+                if (event.data == YT.PlayerState.PLAYING) {
+                  $("#videoCarousel").carousel("pause");
+                } else if (
+                  event.data == YT.PlayerState.PAUSED ||
+                  event.data == YT.PlayerState.ENDED
+                ) {
+                  $("#videoCarousel").carousel("cycle");
+                }
+              },
+            },
+          });
+        });
+      });
+
+      // Load YouTube API script
+      var tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName("script")[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // Chatbot logic
+      const messages = document.getElementById("chat-messages");
+
+      function sendMessage() {
+        const userInput = document.getElementById("user-input");
+        const userMessage = userInput.value.trim();
+        if (userMessage !== "") {
+          addMessage(userMessage, "user-message");
+          getBotResponse(userMessage);
+          userInput.value = "";
+        }
+      }
+
+      function addMessage(message, className) {
+        const messageElement = document.createElement("li");
+        messageElement.textContent = message;
+        messageElement.className = `message ${className}`;
+        messages.appendChild(messageElement);
+        messages.scrollTop = messages.scrollHeight;
+      }
+
+      function getBotResponse(userMessage) {
+        const botResponse =
+          "I'm here to help you with your queries about Baahubali!";
+        addMessage(botResponse, "bot-message");
+      }
+
+      function toggleChat() {
+        const chatContainer = document.getElementById("chat-container");
+        if (
+          chatContainer.style.display === "none" ||
+          chatContainer.style.display === ""
+        ) {
+          chatContainer.style.display = "flex";
+        } else {
+          chatContainer.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

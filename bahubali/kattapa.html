@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karikala Kattappa Nadaar - Baahubali Franchise</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #121212;
+        color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8); /* Increased transparency */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        opacity: 0; /* Start invisible */
+        transform: translateY(20px); /* Start slightly moved down */
+        transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+      }
+
+      .container.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      h1,
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        color: #444;
+      }
+
+      h2 {
+        font-size: 2em;
+        color: #666;
+        margin-top: 30px;
+      }
+
+      p {
+        font-size: 1.1em;
+        color: #333;
+        line-height: 1.6;
+        text-align: justify;
+        opacity: 0;
+        animation: fadeIn 2s ease-in-out forwards;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        filter: brightness(100%);
+      }
+    </style>
+  </head>
+  <body>
+    <video src="kattaintro.mp4" autoplay loop></video>
+
+    <div class="container" id="contentContainer">
+      <h1>Karikala Kattappa Nadaar</h1>
+
+      <h2>Karikala Kattappa Nadaar's Story</h2>
+      <p>
+        Karikala Kattappa Nadaar (pronounced: KA-ree-KUH-la KUT-up-AH nuh-DAAR),
+        known as Kattappa (pronounced: KUT-up-AH), is a main character in the
+        Baahubali franchise. He is a member of a lineage of warriors who serve
+        the royals of Mahishmati with a status equivalent to a slave, but he is
+        the commander and general of Mahishmati's army. He is a skilled and
+        strong combatant and mentor to the princes and heirs of the kingdom.
+      </p>
+
+      <p>Present Day</p>
+      <p>
+        Kattappa maintained a reputation as a great warrior and swordsman. One
+        time, the weapons trader Sheikh Aslam Khan challenged Kattappa to a
+        swordfight after Kattappa declined to buy his weapons. Kattappa
+        ultimately won, but Sheikh Aslam Khan promised to become his lifelong
+        friend after learning about his honor and loyalty.
+      </p>
+
+      <p>
+        When the Kunthala Rebel Tribe was trying to rescue Devasena, Avanthika
+        asked Jaya Varma if the warrior Kattappa could help them free her. Jaya
+        Varma remembered Kattappa from the Battle of the Pindaris, but knew he
+        wouldn't betray the throne of Mahishmati.
+      </p>
+
+      <p>...</p>
+
+      <p>
+        During the Battle of the Valley, Kattappa initially fights Mahendra,
+        believing him to be a bandit who kidnapped Devasena and is trying to
+        kill Bhadra, but recognizes him as Amarendra's son after seeing his
+        face. Afterward, Kattappa recounts the story of his father to Mahendra.
+        Kattappa joins Mahendra in the Battle of Mahishmati and rallies the
+        people of Mahishmati. During the battle, he protects Devasena as she
+        does the Trial by Fire. After Mahendra kills Bhallaladeva and becomes
+        king of Mahishmati, Kattappa stays as the Commander of the Armed Forces
+        of Mahishmati.
+      </p>
+    </div>
+
+    <script>
+      // Set a timeout to make the container visible after 1 minute and 12 seconds
+      setTimeout(function () {
+        document.getElementById("contentContainer").classList.add("visible");
+      }, 43000); // 72000 milliseconds = 72 seconds = 1 minute and 12 seconds
+    </script>
+  </body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baahubali Scenes</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #f5f5f5;
+        padding: 20px;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      .scene {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+      }
+
+      .scene:hover {
+        transform: scale(1.05);
+      }
+
+      .scene img {
+        width: 100%;
+        height: auto;
+      }
+
+      .scene .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .scene:hover .overlay {
+        opacity: 1;
+      }
+
+      .scene .overlay p {
+        color: #fff;
+        font-size: 1.2em;
+        text-decoration: none;
+      }
+
+      #bgVideo {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+        object-fit: cover;
+      }
+
+      .mute-button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(0, 0, 0, 0.5);
+        border: none;
+        border-radius: 50%;
+        padding: 10px;
+        cursor: pointer;
+        color: #fff;
+        z-index: 1000;
+      }
+
+      .mute-button:hover {
+        background: rgba(0, 0, 0, 0.7);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Background video -->
+    <video autoplay muted loop id="bgVideo">
+      <source src="bbmashup.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Mute/Unmute Button -->
+    <button class="mute-button" id="muteButton">
+      <span id="muteIcon">&#128266;</span>
+      <!-- Unicode for speaker icon -->
+    </button>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="scene">
+            <a href="puspha.html">
+              <img src="Puspha.jpg" alt="Puspha" />
+              <div class="overlay">
+                <p>Puspha</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="scene">
+            <a href="#">
+              <img src="Brahmastra.jpg" alt="Brahmastra" />
+              <div class="overlay">
+                <p>Brahmastra</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="scene">
+            <a href="#">
+              <img src="Kalki.jpeg" alt="Kalki 2898-AD" />
+              <div class="overlay">
+                <p>Kalki 2898-AD</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="scene">
+            <a href="#">
+              <img src="Eega.jpg" alt="Eega" />
+              <div class="overlay">
+                <p>Eega</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="scene">
+            <a href="#">
+              <img src="Devara.jpg" alt="Devara" />
+              <div class="overlay">
+                <p>Devara</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="scene">
+            <a href="#">
+              <img src="Hanuman.jpg" alt="Hanuman" />
+              <div class="overlay">
+                <p>Hanuman</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="scene">
+            <a href="#">
+              <img src="Shamshera.webp" alt="Shamshera" />
+              <div class="overlay">
+                <p>Shamshera</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="scene">
+            <a href="doo.html">
+              <img src="baahu.jpg" alt="Baahubali" />
+              <div class="overlay">
+                <p>Baahubali</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="scene">
+            <a href="rrr.html">
+              <img src="rrrr.avif" alt="RRR" />
+              <div class="overlay">
+                <p>RRR</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="scene">
+            <a href="#">
+              <img src="Kgf.jpg" alt="KGF" />
+              <div class="overlay">
+                <p>KGF</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="scene">
+            <a href="#">
+              <img src="Kantara.jpg" alt="Kantara" />
+              <div class="overlay">
+                <p>Kantara</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="scene">
+            <a href="#">
+              <img
+                src="Sye Raa Narasimha Reddy.jpg"
+                alt="Sye Raa Narasimha Reddy"
+              />
+              <div class="overlay">
+                <p>Sye Raa Narasimha Reddy</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="scene">
+            <a href="#">
+              <img src="Rangasthalam.jpg" alt="Rangasthalam" />
+              <div class="overlay">
+                <p>Rangasthalam</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="scene">
+            <a href="#">
+              <img src="Padmaavat.jpg" alt="Padmaavat" />
+              <div class="overlay">
+                <p>Padmaavat</p>
+              </div>
+            </a>
+          </div>
+          <div class="scene">
+            <a href="#">
+              <img src="og.webp" alt="Padmaavat" />
+              <div class="overlay">
+                <p>Padmaavat</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and jQuery (for Bootstrap functionality) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Mute/Unmute functionality -->
+    <script>
+      const muteButton = document.getElementById("muteButton");
+      const muteIcon = document.getElementById("muteIcon");
+      const bgVideo = document.getElementById("bgVideo");
+
+      muteButton.addEventListener("click", () => {
+        if (bgVideo.muted) {
+          bgVideo.muted = false;
+          muteIcon.innerHTML = "&#128266;"; // Speaker icon for unmute
+        } else {
+          bgVideo.muted = true;
+          muteIcon.innerHTML = "&#128263;"; // Mute icon
+        }
+      });
+    </script>
+  </body>
+</html>

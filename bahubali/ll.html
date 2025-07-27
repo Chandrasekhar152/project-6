@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Animated Login Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        font-family: "Arial", sans-serif;
+        color: #fff;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        position: relative;
+        perspective: 1000px;
+      }
+      .form-container {
+        position: absolute;
+        width: 300px;
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        z-index: 2;
+        color: #fff;
+        transition: transform 1s;
+        backface-visibility: hidden;
+      }
+      .login-container h2,
+      .sign-up-container h2,
+      .modal-content h5 {
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+      .form-container input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        outline: none;
+        color: #fff;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      .form-container button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        outline: none;
+        background: #00f260;
+        color: #fff;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.3s ease;
+      }
+      .form-container button:hover {
+        background: #0575e6;
+        transform: scale(1.05);
+      }
+      .login-container .forgot-password,
+      .login-container .sign-up,
+      .sign-up-container .back-to-login {
+        margin-top: 10px;
+        color: #00f260;
+        cursor: pointer;
+      }
+      .login-container .sign-up,
+      .sign-up-container .back-to-login {
+        display: block;
+      }
+      #three-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+      .flipped {
+        transform: rotateY(180deg);
+      }
+      .sign-up-container {
+        transform: rotateY(-180deg);
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container login-container" id="login-container">
+        <h2>Login</h2>
+        <form>
+          <input type="text" placeholder="Username" required />
+          <input type="password" placeholder="Password" required />
+          <button type="submit">Login</button>
+          <div
+            class="forgot-password"
+            data-toggle="modal"
+            data-target="#forgotPasswordModal"
+          >
+            Forgot Password?
+          </div>
+          <div class="sign-up">Sign Up</div>
+        </form>
+      </div>
+      <div class="form-container sign-up-container" id="sign-up-container">
+        <h2>Sign Up</h2>
+        <form>
+          <input type="text" placeholder="Username" required />
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Password" required />
+          <input type="password" placeholder="Confirm Password" required />
+          <a href="sss.html"></a><button type="submit">Sign Up</button></a>
+          <div class="back-to-login">Back to Login</div>
+        </form>
+      </div>
+      <canvas id="three-canvas"></canvas>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="forgotPasswordModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="forgotPasswordModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="forgotPasswordModalLabel">
+              Reset Password
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true" style="color: #fff">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="resetEmail">Email address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="resetEmail"
+                  placeholder="Enter your email"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">
+              Send Reset Link
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <audio id="background-audio" loop>
+      <source src="background-music.mp3" type="audio/mp3" />
+    </audio>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.131.3/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.131.3/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const audio = document.getElementById("background-audio");
+        audio.play();
+
+        // Three.js setup
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(
+          75,
+          window.innerWidth / window.innerHeight,
+          0.1,
+          1000
+        );
+        const renderer = new THREE.WebGLRenderer({
+          canvas: document.getElementById("three-canvas"),
+          alpha: true,
+        });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        // Add a light source
+        const light = new THREE.PointLight(0xffffff, 1, 100);
+        light.position.set(10, 10, 10);
+        scene.add(light);
+
+        // Load a 3D model (replace with your own model)
+        const loader = new THREE.GLTFLoader();
+        loader.load("path/to/your/cartoon_character.glb", function (gltf) {
+          const model = gltf.scene;
+          model.position.set(0, -1, 0);
+          model.scale.set(0.5, 0.5, 0.5);
+          scene.add(model);
+
+          function animate() {
+            requestAnimationFrame(animate);
+            model.rotation.y += 0.01;
+            renderer.render(scene, camera);
+          }
+          animate();
+        });
+
+        camera.position.z = 5;
+
+        // Handle window resize
+        window.addEventListener("resize", () => {
+          camera.aspect = window.innerWidth / window.innerHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Sign up and login toggle with rotation
+        const loginContainer = document.getElementById("login-container");
+        const signUpContainer = document.getElementById("sign-up-container");
+
+        document
+          .querySelector(".login-container .sign-up")
+          .addEventListener("click", () => {
+            loginContainer.classList.add("flipped");
+            signUpContainer.classList.add("flipped");
+            setTimeout(() => {
+              loginContainer.style.display = "none";
+              signUpContainer.style.display = "block";
+            }, 500);
+          });
+
+        document
+          .querySelector(".sign-up-container .back-to-login")
+          .addEventListener("click", () => {
+            loginContainer.classList.remove("flipped");
+            signUpContainer.classList.remove("flipped");
+            setTimeout(() => {
+              loginContainer.style.display = "block";
+              signUpContainer.style.display = "none";
+            }, 500);
+          });
+      });
+    </script>
+  </body>
+</html>

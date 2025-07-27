@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baahubali Technical Team Portal</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background: url("images/baahubali_bg.jpg") no-repeat center center fixed;
+        background-size: cover;
+        color: #fff;
+      }
+
+      .navbar {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .navbar-brand,
+      .nav-link {
+        color: #fff !important;
+      }
+
+      .header {
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 100px 0;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 4em;
+        margin-bottom: 0.5em;
+      }
+
+      .header p {
+        font-size: 1.5em;
+      }
+
+      .team-member-card {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: none;
+        transition: transform 0.2s;
+        cursor: pointer;
+      }
+
+      .team-member-card:hover {
+        transform: scale(1.05);
+      }
+
+      .team-member-card img {
+        border-radius: 50%;
+        margin-bottom: 15px;
+      }
+
+      .card-title {
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+
+      .card-body {
+        text-align: center;
+      }
+
+      .footer {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 3em;
+        }
+
+        .header p {
+          font-size: 1.2em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="#">Baahubali Team</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="team.html">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <h1 class="display-4">Baahubali Technical Team</h1>
+        <p class="lead">
+          Meet the masterminds behind the epic Baahubali movie.
+        </p>
+      </div>
+    </header>
+
+    <!-- Team Section -->
+    <section class="team my-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card team-member-card">
+              <img
+                src="images/rajamouli.jpg"
+                class="card-img-top"
+                alt="Rajamouli"
+              />
+              <div class="card-body">
+                <h5 class="card-title">S. S. Rajamouli</h5>
+                <p class="card-text">Director</p>
+                <p class="card-text">
+                  The visionary behind the Baahubali saga.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card team-member-card">
+              <img
+                src="images/keeravani.jpg"
+                class="card-img-top"
+                alt="Keeravani"
+              />
+              <div class="card-body">
+                <h5 class="card-title">M. M. Keeravani</h5>
+                <p class="card-text">Music Director</p>
+                <p class="card-text">The composer of the iconic soundtrack.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card team-member-card">
+              <img
+                src="images/senthil.jpg"
+                class="card-img-top"
+                alt="Senthil Kumar"
+              />
+              <div class="card-body">
+                <h5 class="card-title">K. K. Senthil Kumar</h5>
+                <p class="card-text">Cinematographer</p>
+                <p class="card-text">
+                  The eye behind the breathtaking visuals.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Add more team members as needed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p class="mb-0">
+          &copy; 2024 Baahubali Technical Team. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

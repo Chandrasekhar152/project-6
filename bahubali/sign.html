@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+      }
+
+      .container {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+
+      .benefits {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+      }
+
+      .benefit {
+        text-align: center;
+        width: 25%;
+      }
+
+      .benefit img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+      }
+
+      .benefit h3 {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 5px;
+      }
+
+      .benefit p {
+        font-size: 14px;
+        color: #666;
+      }
+
+      .login-form {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .login-form h2 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .form-group button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .form-group a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .login-form .form-group .forgot-password {
+        text-align: right;
+        margin-bottom: 10px;
+      }
+
+      .login-form .form-group .login-otp {
+        text-align: center;
+      }
+
+      .login-form p {
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      .login-form p a {
+        color: #007bff;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        Benefits of using-Do It Yourself<br />our new event management tool
+      </h1>
+      <div class="benefits">
+        <div class="benefit">
+          <img
+            src="https://www.flaticon.com/free-icons/credit-card"
+            alt="Credit card icon"
+          />
+          <h3>Quick & easy registration</h3>
+          <p>
+            Complete your registration with just your PAN card and bank details
+          </p>
+        </div>
+        <div class="benefit">
+          <img
+            src="https://www.flaticon.com/free-icons/clock"
+            alt="Clock icon"
+          />
+          <h3>Take your events live superfast!</h3>
+          <p>
+            Publish your event within just 15 minutes! Add event details, dates
+            and ticket and BAM! Your event is ready.
+          </p>
+        </div>
+        <div class="benefit">
+          <img
+            src="https://www.flaticon.com/free-icons/analytics"
+            alt="Analytics icon"
+          />
+          <h3>Monitor analytics & insights</h3>
+          <p>
+            Track event sales, daily ticketing, get daily insights and more in
+            real time.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="login-form">
+      <h2>Do It Yourself</h2>
+      <form>
+        <div class="form-group">
+          <label for="mobile-no">Mobile no.</label>
+          <input
+            type="text"
+            id="mobile-no"
+            name="mobile-no"
+            placeholder="Enter Mobile no."
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter password"
+          />
+        </div>
+        <div class="form-group forgot-password">
+          <a href="#">Forgot password?</a>
+        </div>
+        <div class="form-group">
+          <button type="submit">Proceed</button>
+        </div>
+        <div class="form-group login-otp">
+          <a href="#">Login with OTP</a>
+        </div>
+      </form>
+      <p>Don't have an account? <a href="#">Sign up</a></p>
+      <p>
+        Incase of any query, please write to
+        <a href="mailto:bd@bookmyshow.com">bd@bookmyshow.com</a>
+      </p>
+    </div>
+  </body>
+</html>

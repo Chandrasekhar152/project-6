@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f0f0f0;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      video {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        transform: translate(-50%, -50%);
+      }
+
+      .login-container {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .forget-password {
+        color: rgb(241, 29, 89);
+      }
+    </style>
+  </head>
+  <body>
+    <video src="2trailer.mp4" autoplay loop></video>
+
+    <div class="login-container">
+      <h3 class="mb-4">Login</h3>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <div id="error-message" class="text-danger mb-3"></div>
+
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+      </form>
+      <a
+        class="d-block text-center mt-3 forget-password"
+        href="forget-password.html"
+        >Forget Password?</a
+      >
+    </div>
+
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          var username = document.getElementById("username").value;
+          var password = document.getElementById("password").value;
+          var errorMessage = document.getElementById("error-message");
+
+          if (username === "" || password === "") {
+            errorMessage.textContent = "Both fields are required.";
+            return;
+          }
+
+          if (password.length < 7) {
+            errorMessage.textContent =
+              "Password must be at least 7 characters.";
+            return;
+          }
+
+          errorMessage.textContent = "";
+
+          console.log("Username:", username);
+          console.log("Password:", password);
+
+          alert("Login successful!");
+
+          // Redirect to the home page or another page
+          window.location.href = "Bucket-Budget.html";
+        });
+    </script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

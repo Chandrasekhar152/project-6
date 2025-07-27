@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baahubali Gallery</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .gallery-image {
+        cursor: pointer; /* Change cursor to pointer for gallery images */
+      }
+
+      .modal img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Baahubali</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header text-center">
+      <div class="container">
+        <h1 class="display-4">Baahubali Gallery</h1>
+        <p class="lead">A visual journey through the epic movie Baahubali.</p>
+      </div>
+    </header>
+
+    <!-- Gallery -->
+    <section class="gallery my-5">
+      <div class="container">
+        <div class="row">
+          <!-- Add the same class for images to target them with JavaScript -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <img
+              src="baaa.jpg"
+              class="img-fluid gallery-image"
+              alt="Baahubali Image 1"
+              data-toggle="modal"
+              data-target="#imageModal"
+            />
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <img
+              src="ava.jpg"
+              class="img-fluid gallery-image"
+              alt="Baahubali Image 2"
+              data-toggle="modal"
+              data-target="#imageModal"
+            />
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <img
+              src="raa.jpg"
+              class="img-fluid gallery-image"
+              alt="Baahubali Image 3"
+              data-toggle="modal"
+              data-target="#imageModal"
+            />
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <img
+              src="b1.jpg"
+              class="img-fluid gallery-image"
+              alt="Baahubali Image 4"
+              data-toggle="modal"
+              data-target="#imageModal"
+            />
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <img
+              src="b2.jpg"
+              class="img-fluid gallery-image"
+              alt="Baahubali Image 5"
+              data-toggle="modal"
+              data-target="#imageModal"
+            />
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <img
+              src="bd.jpg"
+              class="img-fluid gallery-image"
+              alt="Baahubali Image 6"
+              data-toggle="modal"
+              data-target="#imageModal"
+            />
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <img
+              src="b3.jpg"
+              class="img-fluid gallery-image"
+              alt="Baahubali Image 7"
+              data-toggle="modal"
+              data-target="#imageModal"
+            />
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <img
+              src="b4.jpg"
+              class="img-fluid gallery-image"
+              alt="Baahubali Image 8"
+              data-toggle="modal"
+              data-target="#imageModal"
+            />
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <img
+              src="b5.jpg"
+              class="img-fluid gallery-image"
+              alt="Baahubali Image 9"
+              data-toggle="modal"
+              data-target="#imageModal"
+            />
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <img
+              src="katt.jpg"
+              class="img-fluid gallery-image"
+              alt="Baahubali Image 10"
+              data-toggle="modal"
+              data-target="#imageModal"
+            />
+          </div>
+          <a href="gg.html"> More..</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-light py-3">
+      <div class="container text-center">
+        <p class="mb-0">&copy; 2024 Baahubali. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Modal for full-size images -->
+    <div
+      class="modal fade"
+      id="imageModal"
+      tabindex="-1"
+      aria-labelledby="imageModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <img
+              id="modalImage"
+              src=""
+              class="img-fluid"
+              alt="Full Size Image"
+            />
+          </div>
+          <div class="modal-footer">
+            <a id="downloadButton" class="btn btn-primary" href="#" download
+              >Download</a
+            >
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Audio player -->
+    <audio
+      controls
+      class="audio-player"
+      style="position: fixed; bottom: 10px; right: 10px"
+    >
+      <source src="audio.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+    <script>
+      // Event listener for gallery images
+      document.querySelectorAll(".gallery-image").forEach((image) => {
+        image.addEventListener("click", function () {
+          const modalImage = document.getElementById("modalImage");
+          const downloadButton = document.getElementById("downloadButton");
+
+          // Set the src attribute of the modal image to the clicked image's src
+          modalImage.src = this.src;
+          downloadButton.href = this.src;
+        });
+      });
+    </script>
+  </body>
+</html>

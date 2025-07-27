@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mahishmati History and Geography</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        margin: 0;
+        padding: 0;
+        color: #f5f5f5;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        transition: background-color 0.5s ease;
+        opacity: 0;
+        animation: fadeIn 2s ease-in-out forwards;
+      }
+
+      .container:hover {
+        background-color: rgba(255, 250, 250, 0.329);
+      }
+
+      h1,
+      h2,
+      h3 {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        color: #444;
+      }
+
+      h2 {
+        font-size: 2em;
+        color: #000000;
+        margin-top: 30px;
+      }
+
+      h3 {
+        font-size: 1.5em;
+        color: #000000;
+        margin-top: 20px;
+      }
+
+      p,
+      ul {
+        font-size: 1em;
+        color: #000000;
+        line-height: 1.6;
+        text-align: justify;
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+
+      ul li {
+        margin-bottom: 10px;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <video
+      src="Mahis.mp4"
+      autoplay
+      muted
+      loop
+      style="width: 100%; height: 100%; position: fixed; z-index: -1"
+    ></video>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(function () {
+          var container = document.createElement("div");
+          container.className = "container";
+          container.innerHTML = `
+            <h1>Mahishmati History and Geography</h1>
+
+            <h2>Rulers of Mahishmati</h2>
+            <ul>
+              <li>Uthama Mahadeva (Founder)</li>
+              <li>Parambhatta (Somadeva Grandfather, Slayer of the Kishoyagas)</li>
+              <li>Jayadeva (Somadeva Father)</li>
+              <li>Somadeva — Hemavati</li>
+              <li>Mekhala (Pupper Ruler)</li>
+              <li>Vikramadeva — Akhila (Daughter of Thimma)</li>
+              <li>Sivagami</li>
+              <li>Amarendra Baahubali (Crown Prince)</li>
+              <li>Bhallaladeva</li>
+              <li>Mahendra Baahubali — Avanthika</li>
+            </ul>
+
+            <h2>History</h2>
+            <p>
+              Mahishmati was originally ruled by a tribal group called Vaithailis.
+              They had given shelter to Uthama Mahadeva (a vassal of the
+              Kadaraimandlam emperor), who stole the secret Gaurikanth, a special
+              stone derived from the volcano Amma Gauri that, if mixed with metal
+              weapons, makes the wielder of the weapon invincible. This was exposed to
+              his by Ugranappa, the commander-in-cheif of the Vaithalikas army and a
+              direct decendant of Kattappa. Uthama Mahadeva started growing a small
+              army and bribing men to join him. Eventually, Uthama Varma chases the
+              Vaithailis into the forest using Gaurikanth and established Mahishmati
+              kingdom. Ugranappa was tricked into becoming a slave. Mahishmati will be
+              later on be captured by the Kandaraimandalam Kingdom which then made
+              Mahishmati a vassal state.
+            </p>
+
+            <p>
+              Some mentioned Kings of Mahishmathi after Uthama Mahadeva is
+              Parambhattara and Jayadeva. Maharaja Somadeva defeated and granted
+              independence once again to Mahishmati. He also defeated the Vaithlikas
+              several times including when the Vaithlikas staged a coup. Mahishmati
+              prosperd during Maharaja Somadeva's rule and Maharani Hemativi.
+              Eventually Mahishmatin again enterd a crisis but eventually it ended.
+              The throne eventually was given to Somadeva son, Mahadeva (Vikramadeva).
+              Eventually Sivagami took the throne and then Bhalladeva. Bhalladeva was
+              deafeated and killed by Mahdedra Baahubali alongside his army who then
+              crowned Mahendra as King.
+            </p>
+
+            <h2>Geography</h2>
+            <p>
+              Mahishmati is a large empire that contains a wide range of environments,
+              as well as small amount of vassal states. The main city of Mahishmati is
+              on an island encircled by a river, with the surrounding lands having
+              forests. To the west of the city and across the river, are the War
+              Fields. The easiest point of entry into Mahishmati for enemy forces is
+              at the eastern end of the War Fields, a large flat area with a desert
+              environment. The physiological boundaries of Mahishmati are defined with
+              the Udayagiri Mountains in the east and the Malava Islands in the west.
+              In the south are the forests of Kathari, Surani, and Kalakeya.
+            </p>
+
+            <p>
+              Located in the north are the vassal states and villages of Mahishmati.
+              They include Kuntala (the kingdom of Devasena), Amburi (the village
+              where Mahendra grew up), and the Singapuram Bandit's Fort (where
+              Sakithan hid after betraying Mahishmati).
+            </p>
+
+            <p>
+              A large river runs through the entire kingdom of Mahishmati, starting in
+              the southeastern part of the Udayagiri Mountains and running north, next
+              to Mahishmati and Kuntala, and leading into the waterfall next to
+              Amburi.
+            </p>
+          `;
+          document.body.appendChild(container);
+        }, 2500);
+      });
+    </script>
+  </body>
+</html>

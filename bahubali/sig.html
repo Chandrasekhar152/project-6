@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        font-family: "Arial", sans-serif;
+        color: #fff;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        position: relative;
+        perspective: 1000px;
+      }
+      .form-container {
+        position: absolute;
+        width: 300px;
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        z-index: 2;
+        color: #fff;
+        transition: transform 1s;
+        backface-visibility: hidden;
+      }
+      .form-container h2 {
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+      .form-container input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        outline: none;
+        color: #fff;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      .form-container button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        outline: none;
+        background: #00f260;
+        color: #fff;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.3s ease;
+      }
+      .form-container button:hover {
+        background: #0575e6;
+        transform: scale(1.05);
+      }
+      .form-container .back-to-login {
+        margin-top: 10px;
+        color: #00f260;
+        cursor: pointer;
+      }
+      .form-container .back-to-login a {
+        color: #00f260;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <h2>Register</h2>
+        <form>
+          <input type="text" placeholder="Username" required />
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Password" required />
+          <input type="password" placeholder="Confirm Password" required />
+          <button type="submit">Register</button>
+          <div class="back-to-login">
+            <a href="ll.html">Back to Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

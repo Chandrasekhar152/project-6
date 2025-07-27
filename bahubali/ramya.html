@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rajmatha Sivagami Devi - Baahubali Franchise</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #121212;
+        color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8); /* Increased transparency */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        opacity: 0; /* Start invisible */
+        transform: translateY(20px); /* Start slightly moved down */
+        transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+      }
+
+      .container.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      h1,
+      h2,
+      h3 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        color: #444;
+      }
+
+      h2 {
+        font-size: 2em;
+        color: #666;
+        margin-top: 30px;
+      }
+
+      h3 {
+        font-size: 1.5em;
+        color: #777;
+        margin-top: 20px;
+      }
+
+      p {
+        font-size: 1.1em;
+        color: #333;
+        line-height: 1.6;
+        text-align: justify;
+        opacity: 0;
+        animation: fadeIn 2s ease-in-out forwards;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        filter: brightness(98%);
+      }
+    </style>
+  </head>
+  <body>
+    <video src="shivaghami.mp4" autoplay loop></video>
+
+    <div class="container" id="contentContainer">
+      <h1>Rajmatha Sivagami Devi</h1>
+
+      <p>
+        Rajmatha Sivagami Devi (pronounced: RAAJ-mah-THA SHIV-gah-MEE DAY-vee),
+        known as Sivagami (SHIV-gah-MEE), is one of the main characters in the
+        Baahubali franchise. She was a subject of Mahishmati who earned a
+        position among the royals and is married to Lord Bijjaladeva. She
+        eventually ruled as the acting queen and regent and is the mother and
+        aunt of Bhallaladeva and Amarendra Baahubali, respectively. Despite her
+        initial poor status, she has become experienced in leadership and combat
+        and is a strict follower of traditions. She is known to make tough and
+        bold decisions for the good of the kingdom regardless of her personal
+        morals if she deems it fit, and can hold her ground in a fight. She dies
+        saving Mahendra Baahubali from drowning in a river, allowing him to be
+        raised by the Amburi Tribe.
+      </p>
+      <h2>Biography</h2>
+      <p>
+        She is described as a fiery young woman with extreme intelligence and a
+        trained warrior. She was the daughter of the nobleman Devaraya of the
+        Mahishmati Kingdom who was executed as a traitor by the king.
+      </p>
+      <h3>Baahubali: The Beginning</h3>
+      <p>
+        Sivagami raises her birth son Bhallaladeva and her nephew Amarendra
+        Baahubali, whom she takes into her care after the death of his mother,
+        and teaches them academics, philosophy, and warfare. In the TV series
+        Baahubali: The Lost Legends the two brothers explore their surrounding
+        regions and fight to defend their kingdom from the forces of evil.
+        Presumably because of the confrontations in The Lost Legends, the
+        viscous Kalakeya tribe is at war with Mahishmati and are received by a
+        traitor stating the time to lay siege to the kingdom. Chief Inkoshi of
+        the Kalakeya insults her, claiming that he'll impregnate her and birth
+        heirs once he takes the kingdom. This infuriates both her and Amarendra
+        Baahubali who intend to make him pay. Baahubali strategically overcomes
+        the Kalakeya's offense and takes Inkoshi hostage, and despite being
+        ordered to make him suffer, Bhalla slays him on the spot. Sivagami,
+        recognizing Amarendra's kindness in protecting the citizens, decides to
+        crown Baahubali the next king of Mahishmati.
+      </p>
+      <h3>Equipment</h3>
+      <p>
+        When Kattappa narrates the story of Amarendra Baahubali, she is seen
+        with a dagger. Marthanda attempts to take over the throne of Mahishmati.
+        It turns out Sivagami bribed his men and Marthanda lunges, but Sivagami
+        blocks the sword with her dagger and kills him.
+      </p>
+    </div>
+
+    <script>
+      // Set a timeout to make the container visible after 1 minute and 12 seconds
+      setTimeout(function () {
+        document.getElementById("contentContainer").classList.add("visible");
+      }, 47500); // 43000 milliseconds = 43 seconds
+    </script>
+  </body>
+</html>

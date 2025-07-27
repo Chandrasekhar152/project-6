@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-image: url("your-background-image.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Ensures the background image stays fixed */
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        padding-left: 122px;
+      }
+
+      .search {
+        color: rgb(5, 5, 5);
+        font-size: 19px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-shadow: 0.1px 0.1px 0px rgb(105, 100, 100);
+        margin-left: 20px;
+        padding-left: 10px;
+      }
+
+      .img {
+        width: 167px;
+        height: auto;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #cdcdcd;
+        padding-left: 120px;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: rgb(2, 2, 2);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover {
+        background-color: #907b7b;
+      }
+
+      lo {
+        float: right;
+      }
+
+      lo a {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      lo a:hover {
+        background-color: #907b7b;
+      }
+
+      .sign {
+        color: #ffffff;
+        background-color: rgb(237, 41, 103);
+        border: none;
+        display: flex;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-left: 50px;
+      }
+
+      .icon1 {
+        height: 45px;
+        padding-left: 10px;
+        cursor: pointer;
+      }
+
+      .checkin {
+        margin-left: 180px;
+      }
+
+      .srcimage {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+      }
+
+      .srcimage img {
+        padding-top: 14px;
+        width: 450px;
+        height: auto;
+      }
+
+      .marquee {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .Recommended {
+        display: flex;
+        font-size: 27px;
+        font-weight: bold;
+        color: rgb(51, 51, 51);
+      }
+
+      .movies-container {
+        overflow-x: auto;
+      }
+
+      .movies {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .mm {
+        flex: 0 0 auto;
+        width: 210px;
+        margin-right: 10px;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.5s ease, box-shadow 0.3s ease;
+      }
+
+      .mm:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .movie {
+        height: 310px;
+        width: 210px;
+        border-radius: 11px;
+      }
+
+      .s4.sticky {
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 0;
+      }
+
+      .pre {
+        background-color: #3d383898;
+        display: flex;
+        padding: 13px;
+        color: white;
+        font-size: large;
+      }
+
+      .mmm {
+        background-color: #3d383898;
+      }
+
+      .mmm {
+        flex: 0 0 auto;
+        width: 290px;
+        cursor: pointer;
+        margin-right: 10px;
+        text-align: center;
+        transition: transform 0.5s ease, box-shadow 0.3s ease;
+      }
+
+      .mmm:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px #f1000098;
+      }
+
+      footer {
+        background-attachment: fixed;
+        background-color: #3d383898;
+        text-align: center;
+      }
+
+      @media screen and (min-width: 700px) {
+        .container {
+          width: 100%;
+          padding: 5px 10px;
+        }
+      }
+
+      @media screen and (min-width: 700px) {
+        .movie {
+          width: 100%;
+          padding: 5px 10px;
+        }
+      }
+
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+
+      .sidebar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidebar a:hover {
+        color: #f1f1f1;
+      }
+
+      .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      #menuIcon {
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+      }
+
+      .button-container {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+      }
+
+      .button-container button {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 18px;
+      }
+
+      .button-container button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="bookmyshow logo.png" class="img" alt="BookMyShow Logo" />
+      <form action="#">
+        <input
+          class="search"
+          type="text"
+          placeholder="Search for Movie, Event, Play, Sports, and Activities"
+          name="search"
+          size="54"
+        />
+      </form>
+      <div class="checkin">
+        <label for="city">CITY:</label>
+        <select id="city" name="city">
+          <option value="select your city">Select your city</option>
+          <!-- Andhra Pradesh Cities -->
+          <option value="visakhapatnam">Visakhapatnam</option>
+          <option value="vijayawada">Vijayawada</option>
+          <option value="guntur">Guntur</option>
+          <option value="nellore">Nellore</option>
+          <option value="kurnool">Kurnool</option>
+          <option value="kadapa">Kadapa</option>
+          <option value="kakinada">Kakinada</option>
+          <option value="rajahmundry">Rajahmundry</option>
+          <option value="tirupati">Tirupati</option>
+          <option value="anantapur">Anantapur</option>
+          <option value="vizianagaram">Vizianagaram</option>
+          <option value="eluru">Eluru</option>
+          <option value="machilipatnam">Machilipatnam</option>
+          <option value="chittoor">Chittoor</option>
+          <option value="ongole">Ongole</option>
+          <!-- Telangana Cities -->
+          <option value="hyderabad">Hyderabad</option>
+          <option value="warangal">Warangal</option>
+          <option value="nizamabad">Nizamabad</option>
+          <option value="karimnagar">Karimnagar</option>
+          <option value="khammam">Khammam</option>
+          <option value="ramagundam">Ramagundam</option>
+          <option value="mahabubnagar">Mahabubnagar</option>
+          <option value="nalgonda">Nalgonda</option>
+          <option value="adilabad">Adilabad</option>
+          <option value="suryapet">Suryapet</option>
+          <option value="miryalaguda">Miryalaguda</option>
+          <option value="siddipet">Siddipet</option>
+          <option value="zaheerabad">Zaheerabad</option>
+          <option value="kamareddy">Kamareddy</option>
+          <option value="mancherial">Mancherial</option>
+        </select>
+      </div>
+      <a href="http://127.0.0.1:5500/login.html" target="_blank">
+        <button class="sign">Sign in</button>
+      </a>
+      <img class="icon1" src="====.png" alt="Icon 1" />
+    </div>
+
+    <div class="step-1">
+      <div class="search1">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5500/google.html" target="_blank">Technician Team</a></li>
+              <li class="nav-item"><a class="nav-link" href="maahismathi.html" target="_blank">Maahismathi</a></li>
+              <li class="nav-item"><a class="nav-link" href="https://chandrasekharsadhu.w3spaces.com/" target="_blank">Events</a></li>
+              <li class="nav-item"><a class="nav-link" href="scenes.html" target="_blank">Scenes</a></li>
+              <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/" target="_blank">Sports</a></li>
+              <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5500/discount.html" target="_blank">Discounts</a></li>
+              <li class="nav-item"><a class="nav-link" href="http://www.google.com/" target="_blank">Collection</a></li>
+              <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5500/skandha.html" target="_blank">Offers</a></li>
+              <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/" target="_blank">Corporates</a></li>
+              <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5500/movielist.html" target="_blank">ListYourShow</a></li>
+          </ul>
+      </nav>
+          <div class="srcimage">
+            <div class="marquee" id="marquee">
+              <img src="1.jfif" alt="Image 1" />
+              <img src="2.jfif" alt="Image 2" />
+              <img src="3.jfif" alt="Image 3" />
+              <img src="4.jfif" alt="Image 4" />
+              <!-- Duplicate images for continuous effect -->
+              <img src="1.jfif" alt="Image 1" />
+              <img src="2.jfif" alt="Image 2" />
+              <img src="3.jfif" alt="Image 3" />
+              <img src="4.jfif" alt="Image 4" />
+            </div>
+            <div class="button-container">
+              <button onclick="prevImage()">&#10094;</button>
+              <button onclick="nextImage()">&#10095;</button>
+            </div>
+          </div>
+
+          <div class="Recommended">
+            <p class="Movie">Recommended Movies</p>
+          </div>
+          <div class="movies-container">
+            <div class="movies">
+              <div class="mm">
+                <a href="ramya.html">
+                  <img class="movie" src="Ramya.jpg" alt="Srikanth Movie" />
+                  <p>Shivaghami</p>
+                </a>
+              </div>
+              <div class="mm">
+                <img
+                  class="movie"
+                  src="Mahendra Bahubali.jfif"
+                  alt="Srikanth Movie"
+                />
+                <p>Mahendra Bahubali</p>
+              </div>
+              <div class="mm">
+                <img
+                  class="movie"
+                  src="bhalladeva.jpg"
+                  alt="Raju Yadav Movie"
+                />
+                <p>Bhalladeva</p>
+              </div>
+              <div class="mm">
+                <img
+                  class="movie"
+                  src="amandra.webp"
+                  alt="Amarendra Bahubali"
+                />
+                <p>Amarendra Bahubali</p>
+              </div>
+              <div class="mm">
+                <a href="kattapa.html">
+                  <img class="movie" src="Kattappa.jfif" alt="Kattappa" />
+                  <p>Kattappa</p>
+                </a>
+              </div>
+              <div class="mm">
+                <a href="devasena.html">
+                  <img class="movie" src="Devasena.jfif" alt="Srikanth Movie" />
+                  <p>Devasena</p>
+                </a>
+              </div>
+              <div class="mm">
+                <a href="bijjaladeva.html">
+                  <img class="movie" src="bichlla.jfif" alt="Srikanth Movie" />
+                  <p>Bijjaladeva</p>
+                </a>
+              </div>
+              <div class="mm">
+                <img class="movie" src="kumarvarma.jfif" alt="Srikanth Movie" />
+                <p>Kumarvarma</p>
+              </div>
+              <div class="mm">
+                <img class="movie" src="kalakeya.jfif" alt="Srikanth Movie" />
+                <p>Kalakeya</p>
+              </div>
+              <div class="mm">
+                <img class="movie" src="bichlla.jfif" alt="Srikanth Movie" />
+                <p>Bichhala deva</p>
+              </div>
+              <div class="mm">
+                <img class="movie" src="avanthika.jfif" alt="Srikanth Movie" />
+                <p>Avanthika</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>sadhu</p>
+      <p>sadhu</p>
+      <p>Additional information or sentences can be added here.</p>
+      <p>
+        This could include contact information, copyright details, or any other
+        relevant content.
+      </p>
+      <p>
+        Feel free to reach out to us at example@example.com for any inquiries.
+      </p>
+      <p>Follow us on social media for the latest updates and promotions!</p>
+      <p>Join our mailing list to receive exclusive offers and discounts.</p>
+    </footer>
+
+    <script>
+      let currentIndex = 0;
+      const images = document.querySelectorAll(".marquee img");
+      const totalImages = images.length / 2;
+
+      function showImage(index) {
+        const marquee = document.getElementById("marquee");
+        marquee.style.transform = `translateX(-${index * 450}px)`;
+      }
+
+      function nextImage() {
+        currentIndex = (currentIndex + 1) % totalImages;
+        showImage(currentIndex);
+      }
+
+      function prevImage() {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        showImage(currentIndex);
+      }
+    </script>
+  </body>
+</html>

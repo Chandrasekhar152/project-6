@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --background-color: white;
+        --text-color: black;
+        --nav-bg-color: #f8f9fa;
+        --nav-text-color: black;
+        --footer-bg-color: #3d383898;
+        --footer-text-color: white;
+      }
+
+      [data-theme="dark"] {
+        --background-color: #121212;
+        --text-color: white;
+        --nav-bg-color: #333;
+        --nav-text-color: white;
+        --footer-bg-color: #333;
+        --footer-text-color: white;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: var(--background-color);
+        color: var(--text-color);
+      }
+
+      .navbar {
+        background-color: var(--nav-bg-color);
+      }
+
+      .navbar-nav .nav-link {
+        color: var(--nav-text-color) !important;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      footer {
+        background-color: var(--footer-bg-color);
+        text-align: center;
+        padding: 10px 0;
+        color: var(--footer-text-color);
+      }
+
+      .audio-control {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        color: white;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .audio-control:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .toggle-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+
+      .toggle-button {
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        color: white;
+        padding: 10px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .toggle-button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+
+      .sidebar a {
+        padding: 10px 15px;
+        text-decoration: none;
+        font-size: 25px;
+        color: white;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidebar a:hover {
+        color: #f1f1f1;
+      }
+
+      .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: #111;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+      }
+
+      .openbtn:hover {
+        background-color: #444;
+      }
+
+      @media screen and (max-width: 768px) {
+        .navbar {
+          display: none;
+        }
+
+        .openbtn {
+          display: block;
+        }
+      }
+
+      @media screen and (min-width: 769px) {
+        .sidebar {
+          display: none;
+        }
+
+        .openbtn {
+          display: none;
+        }
+
+        .navbar {
+          display: flex !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <audio id="background-audio" src="audio.mp3" autoplay loop></audio>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="dashboard.html">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="events.html">Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="offers.html">Offers</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="events.html">Events</a>
+      <a href="offers.html">Offers</a>
+    </div>
+
+    <button class="openbtn" onclick="openNav()">☰</button>
+
+    <div class="container">
+      <h1>Dashboard</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Section 1</h2>
+          <p>This is a placeholder for section 1 content.</p>
+        </div>
+        <div class="col-md-6">
+          <h2>Section 2</h2>
+          <p>This is a placeholder for section 2 content.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Section 3</h2>
+          <p>This is a placeholder for section 3 content.</p>
+        </div>
+        <div class="col-md-6">
+          <h2>Section 4</h2>
+          <p>This is a placeholder for section 4 content.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2023 Dashboard. All Rights Reserved.</p>
+    </footer>
+
+    <button class="audio-control" onclick="toggleAudio()">
+      <span id="audio-icon">&#128266;</span>
+    </button>
+
+    <div class="toggle-container">
+      <button class="toggle-button" id="theme-toggle">Toggle Theme</button>
+    </div>
+
+    <script>
+      const audio = document.getElementById("background-audio");
+      const audioIcon = document.getElementById("audio-icon");
+
+      function toggleAudio() {
+        if (audio.paused) {
+          audio.play();
+          audioIcon.innerHTML = "&#128266;"; // Volume icon
+        } else {
+          audio.pause();
+          audioIcon.innerHTML = "&#128263;"; // Mute icon
+        }
+      }
+
+      const themeToggle = document.getElementById("theme-toggle");
+      const body = document.body;
+
+      function setTheme(theme) {
+        body.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+      }
+
+      function toggleTheme() {
+        const currentTheme = body.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        setTheme(newTheme);
+      }
+
+      const savedTheme = localStorage.getItem("theme") || "light";
+      setTheme(savedTheme);
+
+      themeToggle.addEventListener("click", toggleTheme);
+
+      function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+      }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
